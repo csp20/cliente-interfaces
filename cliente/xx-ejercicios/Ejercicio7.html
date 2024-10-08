@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Ejercicio 7: Dado un vector de enteros que se solicita por pantalla (mediante prompt) 
+    separados por “,”, comprobar el mayor, el menor y por último la media de todos. 
+    a) Mostrar en consola. 
+    b) Mostrar en la propia página. 
+    -->
+
+    <script type="text/javascript">
+      let string = "";
+      for (let i = 0; i <= 4; i++) {
+        let num = prompt("escribe un num");
+        num = Number(num);
+        
+        document.write(num + ", ");
+        string += num + ", ";
+      }
+      document.write("<br>")
+      document.write( "el strin es "+string);
+    </script>
+  </body>
+</html>

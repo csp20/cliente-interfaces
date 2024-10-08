@@ -1,0 +1,268 @@
+/*resteo de estilos*/
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    font-family: Verdana,  Tahoma, sans-serif;
+}
+/* inicializacion de variables */
+/* variables */
+:root{
+    --color-primary: cyan;
+    --color-secundary:blue;
+    --minwidth: 1200px;
+    --color-white: white;
+}
+/* fuentes personalizadas */
+/* 1em = 16px */
+html{
+    /* accesisibilidad 62.5 % es como 10px*/
+    font-size: 62.5%;
+}
+.container{
+    width: var(--minwidth);
+    border: 2px solid green;
+    margin: 0px auto;
+}
+.header{
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primary) ;
+    text-align: center;
+    line-height: 50px;
+    letter-spacing: 3px;
+}
+.navbar{
+    width: 100%;
+    background-color: var(--color-secundary);
+    color: white;
+    height: 40px;
+    font-size: 1.4rem;
+    box-shadow: 0px 0px 25px grey;
+}
+.navabar__list{
+    list-style: none;
+    text-decoration: none;
+    margin: 0px auto;
+    width: 95%;
+}
+.list__item{
+    line-height: 40px;
+     float: left; 
+     /* align-items: right; */
+    /* display: inline-block; */
+}
+.list__item a{
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    /*margin: 0 20px;
+    */display:block;
+    transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+}
+/* ease-in-out comenzará lentamente, será más rápido en el medio de la 
+    animación y luego terminará lentamente */
+.list__item a:hover{
+    background-color: var(--color-primary);
+    color: black;
+    box-shadow: 0px 0px 4px black inset;
+    transform: scale(1.2);
+}
+.item__sublist{
+    /*display: none;
+    *//*opacity: 0;
+    *//*visibility: hidden;
+    */max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    text-align: left;
+    color: white;
+    background:linear-gradient(var(--color-primary),var(--color-secundary));
+    width: 100px;
+    box-shadow: 0px 2px 4px grey;
+    z-index: 10;
+    transition: max-height 0.3s ease;
+}
+.list__item:hover >.item__sublist{
+    /*opacity: 1;
+    visibility: visible;
+    */max-height: 400px;
+    border-radius:5%;
+    -webkit-border-radius:5%;
+    -moz-border-radius:5%;
+    -ms-border-radius:5%;
+    -o-border-radius:5%;
+}
+.content{
+    width: 69%;
+    border: 1px solid rgb(45, 73, 196);
+    float: left;
+    height: 1200px;
+}
+.aside{
+    width: 30.5%;
+    border: 1px solid rgb(45, 73, 196);
+    float: left;
+    height: 1200px;
+    text-align: center;
+    overflow-y: scroll;
+}
+.content__title{
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding: 20px;
+    text-shadow: 0px 4px 4px grey;
+}
+.content__box{
+    width: 40%;
+    border: 1px solid var(--color-primary);
+    background-color: rgb(36, 209, 221);
+    float: left;
+    margin:20px;
+    padding: 20px;
+    box-shadow: 0px 10px 10px gray;
+}
+.content__box--redondo{
+    border-radius: 95px;
+    -webkit-border-radius: 95px;
+    -moz-border-radius: 95px;
+    -ms-border-radius: 95px;
+    -o-border-radius: 95px;
+    /* padding: 20px; */
+}
+.content__box--sombra{
+    box-shadow: 5px 5px 10px gray inset;
+}
+.content__box--3d{
+box-shadow: 14px 14px 20px 0 gray;
+}
+.content__box--shadowsMultiple{
+    box-shadow: -1px -1px 6px 0 rgb(122, 221, 102), 4px 4px 16px 2px rgb(92, 162, 235);
+}
+.content__box--shadowsMultiple2{
+    box-shadow: 2px 2px 8px 0 rgb(209, 102, 221), 4px 4px 16px 0 #d66, 0px 0px 24px 2px rgb(221, 197, 102);
+}
+
+/*cjas libres y cajas fijas*/
+.box__free{
+    position: absolute;
+    border: 1px solid black;
+    color: white;
+    width: 100px;
+    height: 100px;
+    font-size: 14px;
+}
+.box__free1{
+    /* position: relative; */
+    background-color: red;
+    top: 0px;
+    left: 0px;
+}
+.box__free2{
+    background-color: green;
+    top: 0px;
+    left: 200px;
+}
+/*caja fija*/
+.box__static{
+    position: fixed;
+    border: 1px solid blue;
+    background-color: blueviolet;
+    color: white;
+    width: 100px;
+    height: 200px;
+    top: 0px;
+    left: 1%;
+    z-index: 10;
+}
+
+/*animaciones*/
+.transformed{
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    color: white;
+    background-color: blue;
+    margin: 20px;
+    text-align: center;
+    /* transform: rotate(45 deg); */
+    animation-name: rotar;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+
+}
+@keyframes rotar{
+    0%{
+        transform: rotate(0deg);
+    }
+    30%{
+        transform: rotate(60deg);
+        border-radius: 25px;
+        background-color: yellow;
+        color: black;
+    }
+    70%{
+        transform: rotate(360deg);
+        border-radius: 100px;
+        background-color: red;
+        color: white;
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.box__animated{
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    color: white;
+    background-color: blue;
+    margin: 20px;
+    text-align: center;
+    animation: moviendoCaja 10s infinite ease-in-out;
+}
+@keyframes moviendoCaja{
+    0%{
+        transform: rotate(0deg);
+    }
+    30%{
+        margin-left: 400px;
+        transform: rotate(180deg);
+        border-radius: 25px;
+        background-color: yellow;
+        color: black;
+    }
+    70%{
+        margin-left: 1200px;
+        transform: rotate(470deg);
+        border-radius: 100px;
+        background-color: red;
+        color: white;
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.box__container2{
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    border: 1px solid black;
+}
+.box__free--3{
+    /* position: relative; */
+    background-color: red;
+    top: 0px;
+    left: 0px;
+}
+.box__free--4{
+    background-color: green;
+    top: 0px;
+    left: 100px;
+}

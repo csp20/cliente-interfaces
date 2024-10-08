@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ejercicio 1</title>
+  </head>
+  <body>
+    <!--Ejercicio 1: Añadir a una página HTML un script que muestre un alert de la 
+siguiente forma: 
+a) Añadimos el alert de forma interna sin función. 
+b) Añadimos el alert en un evento en un botón. 
+c) Igual que el punto anterior, pero usamos una función. 
+d) Igual, pero la función en un archivo externo.-->
+
+    <!-- A) Mostrar un alert automáticamente al cargar la página -->
+    <script type="text/javascript">
+        alert("Alerta ojo cuidao");
+    </script>
+
+    <!-- B) Botón que al hacer clic muestra un alert -->
+    <h1>Botón de Alerta</h1>
+    <p>
+        <!-- Botón directamente en el HTML con evento onclick -->
+        <button style="height: 20px; width: 100px; color: white; background-color: red;" 
+                onclick="alert('Este es un alert desde un botón')">Pulsar</button>
+    </p>
+
+    <!-- C) Función para mostrar un alert al hacer clic en un botón -->
+    <h1>Alert con Función</h1>
+    <p>
+        <!-- Definimos el botón en el HTML y usamos una función en el onclick -->
+        <button style="height: 20px; width: 100px; color: white; background-color: red;" 
+                onclick="alertar()">Alertar</button>
+    </p>
+
+    <!-- Definimos la función en el script -->
+    <script type="text/javascript">
+        function alertar() {
+            alert("Este es un alert desde una función");
+        }
+    </script>
+
+</body>
+</html>
