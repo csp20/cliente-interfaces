@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Ejercicio 3: Concatenar dos arrays A y B de la siguiente forma: A0, B0, A1, B1, A2, 
+    CFGS Desarrollo de Aplicaciones Web
+    MEDAC, Instituto Oficial de Formación Profesional 
+    B2, …, An, Bn. Los vectores pueden tener longitud distinta (requiere controlarlo).
+    Nota: los valores de cada vector se solicitarán separados por “,”-->
+    <script type="text/javascript">
+        // Función para solicitar un array de números separados por comas
+        function pedirArray(nombre) {
+          let input = prompt(`Introduce los valores del array ${nombre} separados por comas:`);
+          return input.split(","); // Convertir la cadena en array
+        }
+  
+        // Función para intercalar los valores de los arrays A y B
+        function intercalarArrays(A, B) {
+          let resultado = [];
+          let maxLength = Math.max(A.length, B.length); // Longitud máxima entre ambos arrays
+  
+          // Intercalar los valores de A y B
+          for (let i = 0; i < maxLength; i++) {
+            if (i < A.length) {
+              resultado.push(A[i]); // Añadir elemento de A si existe
+            }
+            if (i < B.length) {
+              resultado.push(B[i]); // Añadir elemento de B si existe
+            }
+          }
+          return resultado;
+        }
+  
+        // Llamadas para obtener los arrays A y B
+        let A = pedirArray("A"); // Array A
+        let B = pedirArray("B"); // Array B
+  
+        // Llamar a la función para intercalar los arrays
+        let concatenado = intercalarArrays(A, B);
+  
+        // Mostrar el resultado en la página
+        document.write("Array intercalado: " + concatenado.join(", ") + "<br>");
+  
+        // Mostrar el resultado en la consola
+        console.log("Array intercalado: ", concatenado);
+      </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Ejercicio 3: Crea un script que pida al usuario un numero entero positivo N mayor a 2. 
+Hay que controlar que el numero introducido sea correcto. Si no es así se volverá a pedir. 
+A continuación, debe crearse una matriz NxN rellena con los resultados de la tabla de 
+multiplicar de N (empezando en 1). Finalmente, muestra por consola la matriz “en forma 
+de matriz” 
+Ej: Para el número 3, el programa debe mostrar 
+03 06 09 
+12 15 18 
+21 24 27
+-->
+    <script type="text/javascript">
+      function cogernum() {
+        let num1 = prompt("escribe un num mayor a 2");
+        num1 = Number(num1);
+        while (isNaN(num1) || num1 < 2) {
+          alert = "no es un valor correcto";
+          num1 = prompt("mete un numero superior a 0");
+        }
+        return num1;
+      }
+      let num1 = cogernum();
+      let matriz = new Array(num1);
+      for (let i = 0; i < num1; i++) {
+        matriz[i] = new Array(num1);
+        for (let j = 0; j < num1; j++) {
+          matriz[i][j] = (j + 1) * num1;
+        }
+      }
+
+      console.log(matriz);
+      
+      document.write(matriz);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Ejercicio 2: Crea una función llamada countBy la cual recibirá dos números enteros 
+    positivos: X e Y. Esta función debe devolver lo siguiente: 
+    • Si alguno de los números es negativo devolverá un array vacío. 
+    • Si no, devolverá un array con los Y primeros múltiplos de X empezando por el 
+    1 (incluido) 
+    -->
+    <script type="text/javascript">
+      function cogernum() {
+        let num1 = prompt("escribe un num");
+        num1 = Number(num1);
+        while (isNaN(num1)) {
+          alert = "no es un valor correcto";
+          num1 = prompt("mete un numero ");
+        }
+        return num1;
+      }
+      function countBy() {
+        let x = cogernum();
+        let y = cogernum();
+        let array = [];
+        if (x < 0 || y < 0) {
+           array = [];
+        } else {
+           array = [];
+          for (let i = 0; i < y; i++) {
+            array[i] = (i+1) * x;
+          }
+        }
+        document.write("el array1 es " + array + "<br>");
+        console.log(array);
+      }
+      countBy();
+    </script>
+  </body>
+</html>

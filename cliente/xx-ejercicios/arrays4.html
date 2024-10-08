@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        // Solicitar el array (vector) de enteros al usuario
+      let input = prompt("Introduce los valores del vector separados por comas:");
+      let vector = input.split(",").map(Number); // Convertir a array de números
+
+      // Solicitar el nuevo número que se quiere insertar
+      let nuevoElemento = Number(prompt("Introduce el nuevo número a insertar:"));
+
+      // Solicitar la posición en la que se quiere insertar el nuevo número
+      let posicion = Number(prompt("Introduce la posición donde insertar el nuevo número:"));
+
+      // Verificar que la posición esté dentro del rango válido
+      if (posicion >= 0 && posicion <= vector.length) {
+        // Insertar el nuevo elemento en la posición indicada usando splice
+        vector.splice(posicion, 0, nuevoElemento);
+
+        // Mostrar el vector modificado
+        document.write("El vector modificado es: " + vector.join(", ") + "<br>");
+        console.log("El vector modificado es: ", vector);
+      } else {
+        document.write("La posición es inválida. Inténtalo de nuevo.");
+      }
+    </script>
+</body>
+</html>
