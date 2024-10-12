@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Ejercicio 7: Quitar los elementos repetidos de un array.
+var miArray=new Array(); 
+miArray[0]=200; 
+miArray[1]=40; 
+miArray[2]=400; 
+miArray[3]=40; 
+miArray[4]=40;-->
+<script>
+    let numeros = [200, 40, 400, 40, 40];
+
+    // Filtramos el array para conservar solo los elementos que aparecen una vez en la primera ocurrencia
+    let numerosUnicos = numeros.filter((num, index, arr) => arr.indexOf(num) === index);
+
+    console.log(numerosUnicos); // [200, 40, 400]
+</script>
+</body>
+</html>

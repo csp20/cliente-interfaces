@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Ejercicio 16: Un restaurante nos ha encargado una aplicación para colocar a los clientes 
+en sus mesas. En una mesa se pueden sentar de 0 (mesa vacía) a 4 comensales (mesa 
+llena). 
+El funcionamiento es el siguiente
+Cuando llega un cliente se le pregunta cuántos son. Como el programa no está preparado 
+para colocar a grupos mayores a 4, si un cliente solicita una mesa con más comensales 
+(pej, 6), el programa dará el mensaje “Lo siento, no admitimos grupos de 6, haga grupos 
+de 4 personas como máximo e intente de nuevo” y volverá a preguntar. 
+Para cada grupo nuevo que llega, se busca siempre la primera mesa libre (con 0 personas). 
+Si no quedan mesas libres, se busca una donde haya hueco para todo el grupo (por 
+ejemplo, si el grupo es de dos personas, se podrá colocar en mesas donde haya una o dos 
+personas). 
+Cada vez que se sientan nuevos clientes se debe mostrar el estado de las mesas. 
+Los grupos no se pueden romper, aunque haya huecos sueltos suficientes. 
+A tener en cuenta: 
+    • El programa comienza pidiendo el número de mesas que tiene el restaurante. 
+    • Inicialmente, las mesas se cargan con valores aleatorios entre 0 y 4 y mostrará por 
+    pantalla como quedan las mesas inicialmente. 
+    • El programa seguirá pidiendo comensales hasta que se introduzca un valor 
+    negativo. 
+  
+
+-->
+    <script>
+      function cogernum() {
+        let num1 = prompt("escribe un num");
+        num1 = Number(num1);
+        while (isNaN(num1) || num1 < 0) {
+          alert = "no es un valor correcto";
+          num1 = prompt("mete un numero superior a 0");
+        }
+        return num1;
+      }
+      function cogernum2() {
+        let num1 = prompt("escribe un num");
+        num1 = Number(num1);
+        while (isNaN(num1) || num1 < 0 || num > 4) {
+          alert = "no es un valor correcto";
+          num1 = prompt("mete un entre 0 y 4 o termina el programa con -1");
+        }
+        return num1;
+      }
+      function buscarhueco(mesa){
+       for (let i = 0; i < numMesas.length; i++) {
+        if (mesa+numMesas[i]>4) {
+            continue;
+        }else{
+            numMesas[i]=mesa + numMesas[i];
+            break;        
+        }
+        if (lastIndexof(numMesas[i])==4) {
+            alert("no hay mesas disponibles;")
+        }
+        
+       }
+       
+      }
+      alert("cuantas mesas tiene el restaurante?");
+      let mesas = cogernum();
+      let numMesas = [];
+      for (let i = 0; i < mesas; i++) {
+        let randomNum = Math.floor(Math.random() * 5); // Números entre 0 y 4
+        numMesas.push(randomNum); 
+      }
+    //   console.log("estado d las mesas: " + numMesas);
+    //   document.write("estado d las mesas: " + numMesas);
+
+      do {
+        console.log("estado d las mesas: " + numMesas);
+        document.write("estado d las mesas: " + numMesas);
+       alert("mesa para cuantos?");
+       mesa =cogernum2();
+        buscarhueco(mesa);
+      } while (mesa!=-1);
+
+
+
+    </script>
+  </body>
+</html>

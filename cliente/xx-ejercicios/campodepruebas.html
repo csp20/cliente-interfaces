@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurante</title>
+    <script type="text/javascript">
+      function cogernum() {
+        let num1 = prompt("Escribe un número");
+        num1 = Number(num1);
+        while (isNaN(num1) || num1 < 0) {
+          alert("No es un valor correcto");
+          num1 = prompt("Introduce un número mayor a 0");
+        }
+        return num1;
+      }
+
+      function cogernum2() {
+        let num1 = prompt("¿Cuántos comensales son?");
+        num1 = Number(num1);
+        while (isNaN(num1) || num1 < 0 || num1 > 4) {
+          alert("Lo siento, no admitimos grupos mayores de 4.");
+          num1 = prompt("Introduce un número entre 0 y 4, o -1 para terminar");
+        }
+        return num1;
+      }
+
+      function buscarHueco(mesa) {
+        // Intentar buscar mesa vacía (con 0 personas)
+        for (let i = 0; i < numMesas.length; i++) {
+          if (numMesas[i] === 0) {
+            numMesas[i] = mesa;
+            return true; // Se encontró una mesa libre
+          }
+        }
+
+        // Si no hay mesas vacías, buscar mesa con espacio suficiente
+        for (let i = 0; i < numMesas.length; i++) {
+          if (numMesas[i] + mesa <= 4) {
+            numMesas[i] += mesa;
+            return true; // Se acomodaron los clientes
+          }
+        }
+
+        // Si no se encontró hueco, mostrar mensaje
+        alert("No hay espacio suficiente para el grupo.");
+        return false;
+      }
+
+      function mostrarMesas() {
+        console.clear(); // Limpiar consola
+        console.log("Estado de las mesas: " + numMesas);
+      }
+
+      // Programa principal
+      alert("¿Cuántas mesas tiene el restaurante?");
+      let mesas = cogernum();
+      let numMesas = [];
+
+      // Rellenar las mesas con valores aleatorios entre 0 y 4
+      for (let i = 0; i < mesas; i++) {
+        let randomNum = Math.floor(Math.random() * 5); // Números entre 0 y 4
+        numMesas.push(randomNum);
+      }
+
+      mostrarMesas();
+
+      // Bucle para seguir pidiendo comensales hasta que se introduzca un valor negativo
+      let mesa;
+      do {
+        mesa = cogernum2();
+        if (mesa !== -1) {
+          buscarHueco(mesa);
+          mostrarMesas(); // Mostrar el estado actualizado de las mesas
+        }
+      } while (mesa != -1);
+
+      alert("Programa finalizado");
+    </script>
+  </head>
+  <body>
+    <h1>Gestión de Mesas del Restaurante</h1>
+  </body>
+</html>
