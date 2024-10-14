@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--  Crea una página web con un solo botón en el que, al pulsarlo, se le pida al 
+usuario un año (pej: 1492). A continuación, el programa debe mostrar a través de una 
+ventana modal a qué siglo pertenece el año introducido.
+El siglo I abarca desde el año 1 hasta el año 100 inclusive, el siglo II desde el año 101 
+hasta el año 200 inclusive, etc.
+Ejemplos: 
+1705 -> 18 
+1900 -> 19 
+1601 -> 17 
+2000 -> 20 
+2742 -> 28 
+Importante: intenta que la función que programes tenga el menor número de lineas 
+posibles. MAXIMO 5 lineas contando llaves (y es mucho). Piensa bien. -->
+    <button
+      style="height: 20px; width: 100px; color: white; background-color: blue"
+      onclick="calcularanio()">pulsar</button>
+      
+    <script type="text/javascript">
+      function calcularanio() {
+        let anio = prompt("Mete un año:");
+        let siglo = Math.floor(anio / 100) + 1;
+        alert("Es el siglo " + siglo);
+      }
+    </script>
+  </body>
+</html>
