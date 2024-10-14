@@ -27,19 +27,20 @@ Ejemplos:
       // Encontrar elementos de array1 que no estén en array2
       for (let i = 0; i < array1.length; i++) {
         if (array2.indexOf(array1[i]) === -1) {
-          dif.push(array1[i]);  // Añadir el elemento a 'dif' si no está en array2
+          dif.push(array1[i]);  // añadir el elemento a dif si no está en array2
         }
       }
   
       // Encontrar elementos de array2 que no estén en array1
       for (let i = 0; i < array2.length; i++) {
         if (array1.indexOf(array2[i]) === -1) {
-          dif2.push(array2[i]); // Añadir el elemento a 'dif2' si no está en array1
+          dif2.push(array2[i]); // añadir el elemento a dif2 si no está en array1
         }
       }
-  
-      // Concatenar los arrays de diferencias para tener los únicos de ambos arrays
-      return dif.concat(dif2);
+      let arrayfinal = dif.concat(dif2);
+      const uniquearr = [... new Set(arrayfinal)];
+      // fusionar los arrays de diferencias para tener los unicos de ambos arrays
+      return uniquearr;
     }
   
     let resultado = limpiarcode(array1, array2);
