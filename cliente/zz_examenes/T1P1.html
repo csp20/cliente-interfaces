@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- EJERCICIO 1 -->
+    <h2>ejercicio 1</h2>
+    <button onclick="convertir()">convertir monedas</button>
+
+    <script type="text/javascript">
+        function cogernum() {
+            let num1 = prompt("escriber un num, (1=> pesetas 2 =>dolares)");
+            num1 = Number(num1);
+            while (isNaN(num1) || num1 < 0 || num1 > 2) {
+                alert = "no es un valor correcto";
+                num1 = prompt("mete un numero superior a 0 y menor que 3");
+            }
+            return (num1);
+        }
+        function cogernum2() {
+            let num1 = prompt("escribe un num ");
+            num1 = Number(num1);
+            while (isNaN(num1) || num1 < 0) {
+                alert = "no es un valor correcto";
+                num1 = prompt("mete un numero superior a 0 ");
+            }
+            return (num1);
+        }
+
+        function convertir() {
+            let monedas = cogernum();
+            let euros = cogernum2();
+            if (monedas == 1) {
+                let pesetas = euros * 166;
+                alert(euros + " euros son: " + pesetas + " pesetas");
+            } else {
+                let dolares = euros * 1.09;
+                alert(euros + " esuros  son: " + dolares + " dolares");
+            }
+        }
+
+    </script>
+    <!--EJERCICIO 2-->
+    <button onclick="ejercicio2()">pulsa para el ej 2 </button>
+    <script type="text/javascript">
+        function ejercicio2() {
+
+
+            let suma = 0;
+            do {
+                let contadornum = 0;
+                let numero1 = prompt("mete un num  o un '.' para finalizar (maximo 10 numeros)");
+                contadornum++;
+                let numero2 = prompt("mete un num  o un '.' para finalizar (maximo 10 numeros)");
+                contadornum++;
+                let numero3 = prompt("mete un num  o un '.' para finalizar (maximo 10 numeros)");
+                contadornum++;
+                let numero4 = prompt("mete un num  o un '.' para finalizar (maximo 10 numeros)");
+                contadornum++;
+                let numero5 = prompt("mete un num  o un '.' para finalizar (maximo 10 numeros)");
+                contadornum++;
+                let numero6 = prompt("mete un num  o un '.' para finalizar (maximo 10 numeros)");
+                contadornum++;
+                let numero7 = prompt("mete un num  o un '.' para finalizar (maximo 10 numeros)");
+                contadornum++;
+                let numero8 = prompt("mete un num  o un '.' para finalizar (maximo 10 numeros)");
+                contadornum++;
+                let numero9 = prompt("mete un num  o un '.' para finalizar (maximo 10 numeros)");
+                contadornum++;
+                let numero10 = prompt("mete un num  o un '.' para finalizar (maximo 10 numeros)");
+                contadornum++;
+                suma = numero1 + numero2 + numero3 + numero4 + numero5 + numero6 + numero7 + numero8 + numero9 + numero10;
+
+            } while (numero1 != "." ||numero2 != "." || numero3 != "." ||
+            numero4 != "." || numero5 != "." || numero6 != "." || numero7 != "." ||
+            numero8 != "." || numero9 != "." || numero10 != "." ||contador < 10);
+
+
+            let media = suma / contador;
+            alert("la media es " + media);
+            let supera = "los numeros que superan la media son:  ";
+            if (numero1 > media) {
+                supera += numero1;
+            }
+            if (numero2 > media) {
+                supera += numero2;
+            }
+            if (numero3 > media) {
+                supera += numero3;
+            }
+            if (numero4 > media) {
+                supera += numero4;
+            }
+            if (numero5 > media) {
+                supera += numero5;
+            }
+            if (numero6 > media) {
+                supera += numero6;
+            }
+            if (numero7 > media) {
+                supera += numero7;
+            }
+            if (numero8 > media) {
+                supera += numero8;
+            }
+            if (numero9 > media) {
+                supera += numero9;
+            }
+            if (numero10 > media) {
+                supera += numero10;
+            }
+            alert(supera);
+        }
+
+    </script>
+    <!--EJERCICIO 3 -->
+    <button onclick="ejercicio3()">pulsa para el ej 3 </button>
+    <script type="text/javascript">
+        function ejercicio3() {
+
+
+            function cogernum3() {
+                let num1 = prompt("escribe un num entre 5 y 10");
+                num1 = Number(num1);
+                while (isNaN(num1) || num1 < 5 || num1 > 10) {
+                    alert = "no es un valor correcto";
+                    num1 = prompt("mete un numero superior a 4 y menor que 11 ");
+                }
+                return (num1);
+            }
+            let numentero = new Array(cogernum3());
+            Number(numentero);
+            let suma = 0;
+            for (let i = 0; i < numentero.length; i++) {
+                let numale = (Math.floor(Math.random() * 100));
+                numentero[i] = numentero.length * numale;
+                //console.log(numentero[i] + " ");
+                suma += numentero[i];
+            }
+            console.log(numentero + "  ");
+            let MEDIA = suma / numentero.length;
+            let calc = [];
+            for (let i = 0; i < numentero.length; i++) {
+                if (numentero[i] > MEDIA) {
+                    calc.push(numentero[i]);
+
+                }
+
+
+            }
+            for (let i = 0; i < calc.length; i++) {
+                //console.log("superan la media "+calc[i]);
+
+            }
+            console.log("superan la media " + calc);
+
+        }
+    </script>
+    <br><br><br>
+    <!-- EJRCICIO 4 -->
+    <button onclick="ejercicio4()">pulsa para el ej 4 </button>
+    <script type="text/javascript">
+        function ejercicio4() {
+
+            let n_filasYcolumnas = cogernum4();
+
+
+            crearMatriz(n_filasYcolumnas);
+
+            function crearMatriz(n_filasYcolumnas) {
+                let suma = 0;
+                let matriusca = new Array(n_filasYcolumnas);
+                for (i = 0; i < n_filasYcolumnas; i++) {
+                    matriusca[i] = new Array(n_filasYcolumnas);
+                    for (j = 0; j < n_filasYcolumnas; j++) {
+                        matriusca[i][j] = Math.floor(Math.random() * (100));
+                        suma += matriusca[i][j];
+                    }
+
+                    //console.log( "0"+matriusca[i][j]);
+                }
+                let media = suma/(n_filasYcolumnas*n_filasYcolumnas);
+                console.log("la media es: "+ media);
+                console.log(matriusca);
+
+                let array = [[0][1]];
+                for (let i = 0; i < n_filasYcolumnas; i++) {
+                    if (matriusca[i][j] > media) {
+                        array[0[0]].push(matriusca[i][j]);
+                    }else{
+                        array[0[1]].push(matriusca[i][j]);
+                    }
+                    
+                }
+
+
+              
+
+                function pintarmatriz() {
+
+                    for (let i = 0; i < n_filasYcolumnas; i++) {
+                        for (let j = 0; j < n_filasYcolumnas; j++) {
+                            if (matriusca[i][j] > 0 && matriusca[i][j] < 10) {
+                                let resultado = "0" + matriusca[i][j] + ",";
+                            } else {
+                                let resultado = matriusca[i][j] + ",";
+                            }
+
+                            console.log(resultado);
+                            if (i = n_filasYcolumnas) {
+                                console.log("\n");
+                            }
+                        }
+
+                    }
+
+                }
+
+
+            }
+
+            function cogernum4() {
+                let num1 = prompt("escriber un num");
+                num1 = Number(num1);
+                while (isNaN(num1) || num1 < 2 || num1 > 5) {
+                    alert = "no es un valor correcto";
+                    num1 = prompt("mete un numero entre 2 y 5");
+                }
+                return (num1);
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>
