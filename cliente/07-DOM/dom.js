@@ -73,14 +73,56 @@ function cambiocolor(cabecera){
 }
 
 //mod titulo 2 
-function cambiosubtitlo(){
-    let elemento = document.getElementById('subtitle');
-elemento.style.color =  elemento.style.color === 'orange' ? 'pink' : 'orange';
 
+
+let subtitle =document.getElementById('subtitle');
+subtitle.addEventListener('click', cambiosubtitlo);
+
+function cambiosubtitlo(){
+let elemento = document.getElementById('subtitle');
+elemento.style.color =  elemento.style.color === 'green' ? 'yellow' : 'green';
 }
 
 
-//opcion 1 llamada a eventos desde js
-// elemento.onclick = cambiosubtitlo(elemento);
-let titleh3 =document.getElementById('h3subtitle');
-titleh3.addEventListener('click', cambiosubtitlo());
+
+// Declaramos h3title con un id y un evento con click para cambiar su color
+// usamoss addEventListener y una funcion con if para establecer el cambio
+
+let titleh3 =document.getElementById('h3title');
+titleh3.addEventListener('click', cambiosubtitlo3);
+// titleh3.addEventListener('dblclick', cambiosubtitlo3);
+
+function cambiosubtitlo3(){
+    let elemento = document.getElementById('h3title');
+    elemento.style.color = (elemento.style.color === 'orange') ? 'pink' : 'orange';
+}
+// titleh3.addEventListener('click', cambiosubtitlo3());
+
+let c1 = document.getElementById('caja1');
+c1.addEventListener('click', cambioclase1);
+
+let c2 = document.getElementById('caja2');
+c2.addEventListener('click', cambioclase2);
+
+function cambioclase1(){
+    // c1.style.background= 'black';
+    // c1.style.color = 'white';
+    if (c1.classList.contains('caja--negra')) {
+
+        c1.classList.remove('caja--negra');
+        c1.classList.add('caja--roja');
+    }else{
+        c1.classList.remove('caja--roja');
+        c1.classList.add('caja--negra');
+    }
+    
+}
+function cambioclase2(){
+    if (c2.classList.contains('caja--negra')) {
+
+        c2.classList.remove('caja--negra');
+        c2.classList.add('caja--roja');
+    }else{
+        c2.classList.replace('caja--roja', 'caja--negra');
+    }
+}
