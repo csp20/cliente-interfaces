@@ -278,6 +278,17 @@ justify-items: center;
         
     
     }
+    .lateral__list li{
+        margin: 0;
+        width: 90%;
 
+    }
+    .content__projects{
+        grid-template-columns: 1fr  ;
+    }
+    .content__footer{
+        display: grid;
+        grid-template-columns: 1fr  ;
+    }
 }
 }
