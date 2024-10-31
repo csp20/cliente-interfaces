@@ -403,6 +403,7 @@ transform: scale(1.1);
 }
 .services__list{
     /* grid */
+    margin-top: 160px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 3rem; /* separación entre los elementos */
@@ -507,11 +508,15 @@ transform: scale(1.1);
 }
 .service-shapes--shape1{
     /* position */
+    top: 3%;
+    right: 25%;
 
 }
 .service-shapes--shape2{
     /* position */
     opacity: 0.6;
+    top: 3%;
+    right: 31%;
 }
 .service-shapes--shape3{
     /* position y animación */
@@ -528,7 +533,8 @@ transform: scale(1.1);
 /* Estilos para la sección de Proyectos */
 .layout__projects{
     /* position y z-index */
-
+    position: relative;
+    z-index: 1;
     background-color: var(--color-bg-projects);
     padding: 14rem 10rem;
 
@@ -545,7 +551,8 @@ transform: scale(1.1);
 }
 .projects__categories{
     /* Flex */
-
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
     gap: 7rem;
     margin-bottom: 5.5rem;
 }
@@ -563,11 +570,14 @@ transform: scale(1.1);
 .projects__all{
     /* flex */
 
+    display: grid;
+    grid-template-columns: 2fr 2fr;
     gap: 4rem 7rem;
 }
 .projects__project{
-    width: calc(50% - 3.5rem); /* consigo que mis tarjetas tengan un tamaño variable. Facilita el responsive */
+    width: calc(100% - 3.5rem); /* consigo que mis tarjetas tengan un tamaño variable. Facilita el responsive */
 }
+
 .project__container-img{
     width: 100%;
     border-radius: 3rem 3rem 0 0;
@@ -598,27 +608,40 @@ transform: scale(1.1);
 }
 .project-shapes__item{
     /* position y z-index */
-
+    position: absolute;
     pointer-events: none;
 }
 .project-shapes--shape1{
     /* position */
-    
-    opacity: 0.5;
+    top: 5%;
+    right: 15%;
+    z-index: -1;
+    opacity: 0.6;
 }
 .project-shapes--shape2{
     /* position */
-
+    top: 5%;
+    right: 20%;
     opacity: 0.5;
     /* animación */
 
 }
 .project-shapes--shape3{
     /* position */
-
     opacity: 0.8;
     /* animación */
+    /* position y animación */
+    z-index: -1;
+    top: 15%;
+    right: 25%;
+    animation: mueveBolaRosita2 10s infinite;
 }
+@keyframes mueveBolaRosita2 {
+    100% {
+        transform: rotate(360deg) translateX(300px) rotate(-360deg) translateX(-300px);
+    }
+}
+
 
 /* Estilos para estadísticas y Mejores clientes */
 .layout__stats,
