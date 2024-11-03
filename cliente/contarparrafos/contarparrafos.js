@@ -50,7 +50,7 @@ function contarEnlaces(){
     let info = document.getElementById("informacion");
 
     //a) num enlaces Array
-    // creamos var numenlaces y metemos el elemento por su tagname o etiqueta
+    // creamos array numenlaces y metemos los elementos por su tagname o etiqueta
     let numEnlaces = document.getElementsByTagName("a");
     console.log(numEnlaces);
     //en la variable info vemos su html interno y escribimos el num total de enlaces
@@ -60,7 +60,7 @@ function contarEnlaces(){
     info.innerHTML += "<br>"+ "la direccion del penultimo enlace es: "+ numEnlaces[numEnlaces,length-2].href;
     //C) num de enlaces que apuntan a http://prueba
     let contador =0;
-    for (let i = 0; i <numEnlaces; i++) {
+    for (let i = 0; i <numEnlaces.length; i++) {
         if (numEnlaces[i].href=='http://prueba/') {
             contador++;
         }
