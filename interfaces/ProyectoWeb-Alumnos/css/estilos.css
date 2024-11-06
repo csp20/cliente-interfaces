@@ -29,16 +29,16 @@
  definimos familia de fuente que voy a utilizar */
 :root{
     --mx-width: 1240px;
-    --color-primary: #37bcf9;
-    --color-secondary: #fff;
-    --color-backgroung: #ccc;
-    --color-bg: black;
-    --color-text-white: white;
-    --color-text-title: #00538c;
-    --color-grey: gray;
-    --color-box-shadow: #ddd;
-    --color-box-shadow2: #393d3f;
-    --color-focus: #555;
+    --color-primary: #37f9bb;
+    --color-secondary: #020b05;
+    --color-backgroung: #23df3c;
+    --color-bg: rgb(17, 92, 63);
+    --color-text-white: rgb(185, 241, 222);
+    --color-text-title: #1fa47c;
+    --color-grey: rgb(67, 134, 85);
+    --color-box-shadow: #1bce2a;
+    --color-box-shadow2: #205134;
+    --color-focus: #375b3e;
 }
 
 /* Estilos Generales */
@@ -58,13 +58,27 @@ body{
     width: var(--mx-width);
     margin: 0px auto; /* centra un elemento */
 }
-
+.header__wrap{
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+}
+.content__wrap{
+    display: grid;
+    grid-template-columns: 2fr;
+    position: relative;
+}
+.content__info{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
 .logo__gear, .card__icon, .search__icon, .aside-box__icon, .social__icon{
     font-family: "WebSymbolsRegular";
 }
 
 /* Cabecera */
 .header{
+    display: grid;
+    
     width: 100%;
     height: 70px;
     background-color: var(--color-bg);
@@ -73,7 +87,8 @@ body{
 }
 
 .header__logo{
-    float: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     width: 200px;
     height: 50px;
     background-color: var(--color-primary);
@@ -111,19 +126,18 @@ body{
 /* efecto hover en Logo */
 .header__logo:hover{
     background-color: var(--color-backgroung);
-    color: black;
+    color: white;
     border-radius: 2px;
 }
 
 .header__logo .logo__gear{
-    display: block;
-    float: left;
+    display: grid;
+    margin-right: 20px;
     font-size: 30px;
     margin-top: 4px;
-    margin-left: 26px;
-
-    /* A la hora de crear animación */
-animation: giraRueda 4s infinite linear;
+    margin-left: 20px;
+    /*Alahoradecrearanimación*/animation: giraRueda 3s infinite linear;
+    -webkit-animation: giraRueda 3s infinite linear;
 }
 
 /* animación logo rueda */
@@ -151,8 +165,8 @@ animation: giraRueda 4s infinite linear;
     }
 }
 .header__menu{
-    float: right;
-    height: 70px;
+    display: grid;
+    height: 70%;
     background: transparent;
 }
 .menu__list li{
@@ -180,7 +194,7 @@ animation: giraRueda 4s infinite linear;
     height: 100px;
     border: 10px solid var(--color-text-white);
     box-shadow: 0px 0px 2px var(--color-gray);
-    background: url("../img/bakbaner.png");
+    background: url("../img/fotocesped.jpg!sw800");
     background-position: -200px -200px;
     margin: 20px auto;
     overflow: hidden;
@@ -225,9 +239,13 @@ animation: giraRueda 4s infinite linear;
     }
 }
 /* Tarjetas */
+.content__cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+}
 .cards__card{
-    float: left;
-    width: 200px;
+    display: grid;
+    width: 240px;
     height: 260px;
     border: 1px solid var(--color-backgroung);
     box-shadow: 1px 1px 4px var(--color-box-shadow);
@@ -235,9 +253,12 @@ animation: giraRueda 4s infinite linear;
     margin: 22px;
     margin-top: 40px;
     cursor: pointer;
-    /* transicion */
-    transition:  all 500ms ;
-
+    /*transicion*/transition:  all 500ms ;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 /*efecto hover en las cartas */
 .cards__card:hover{
@@ -313,9 +334,9 @@ animation: giraRueda 4s infinite linear;
         transform: translateY(0%);
     }
 }
-.clearfix{
-    float: none;
-    clear: both;
+.content__body{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
 }
 
 /* Barra lateral */
@@ -323,7 +344,7 @@ animation: giraRueda 4s infinite linear;
     width: 300px;
     min-height: 1070px;
     font-family: "TrebuchetMS";
-    float: right;
+    float: left;
     margin: 20px;
 }
 .lateral__title{
@@ -331,7 +352,7 @@ animation: giraRueda 4s infinite linear;
     width: auto;
     height: 45px;
     line-height: 49px;
-    background: url("../img/pxgray.png"), var(--color-text-white);
+    background:  var(--color-text-white);
     box-shadow: 0px 1px 0px var(--color-box-shadow2), 1px 2px 0px var(--color-box-shadow2), 2px 3px 0px var(--color-box-shadow2), 3px 4px 0px var(--color-box-shadow2);
     font-size: 30px;
     font-family: "BebasNeue";
@@ -446,13 +467,13 @@ animation: giraRueda 4s infinite linear;
     margin-left: 17px;
     margin-bottom: 20px;
     /* transición */ 
-}
+}/* 
 .lateral__login input[type="submit"]:hover,
 .lateral__login input[type="button"]:hover,
 .lateral__login input[type="reset"]:hover,
 .lateral__login button:hover{
-    /* le incluyo una sombra */
-}
+    le incluyo una sombra 
+}*/
 
 .lateral__login a{
     display: block;
@@ -507,16 +528,20 @@ animation: giraRueda 4s infinite linear;
 
 /* Artículos */
 .content__articles{
-    float: left; /* es necesario flotarlo puesto que he incluido el div clearfix*/
-    width: 860px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    
 }
 
 .content__articles h2{
-    display: block;
+    display: grid;
+    
     width: 100%;
-    height: 75px;
-    line-height: 75px; /* centra el texto */
-    text-align: center;
+    height: 40px;
+    line-height: 45px; /* centra el texto */
+    text-align: left;
     font-family: "BebasNeue";
     font-size: 40px;
     font-weight: normal;
@@ -525,15 +550,15 @@ animation: giraRueda 4s infinite linear;
     box-shadow: 0px 1px 0px var(--color-box-shadow2), 1px 2px 0px var(--color-box-shadow2), 2px 3px 0px var(--color-box-shadow2), 3px 4px 0px var(--color-box-shadow2);
     margin: 0px auto;
     margin-top: 20px;
+    padding-left: 10px;
     margin-bottom: 15px;
 }
 
 .articles__article{
-    width: 98%;
-    height: auto;
+    display: grid;
+    width: 280px;
+    height: 240px;
     border: 1px solid var(--color-backgroung);
-    margin: 40px auto;
-    padding: 10px;
     font-family: "TrebuchetMS";
     background: var(--color-text-white);
     color: var(--color-bg);
@@ -554,15 +579,20 @@ animation: giraRueda 4s infinite linear;
 }
 
 .article__datos{
-    float: right;
+    display: grid;
     background-color: var(--color-box-shadow2);
     color: var(--color-text-white);
     height: 30px;
-    line-height: 30px;
-    margin: -10px;
+    line-height: 15px;
+    margin: 10px;
     padding: 4px;
     font-size: 13px;
-    border-radius: 0px 0px 0px 5px; /* esquina inferior izq 5px */
+    border-radius: 5px 5px 5px 5px;
+    /*esquinainferiorizq5px:;*/
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -ms-border-radius: 5px 5px 5px 5px;
+    -o-border-radius: 5px 5px 5px 5px;
 }
 .article__datos span{
     margin: 6px;
