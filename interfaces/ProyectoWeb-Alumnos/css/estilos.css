@@ -32,13 +32,14 @@
     --color-primary: #37f9bb;
     --color-secondary: #020b05;
     --color-backgroung: #23df3c;
-    --color-bg: rgb(17, 92, 63);
-    --color-text-white: rgb(185, 241, 222);
+    --color-bg: rgb(23, 122, 84);
+    --color-text-white: #90ebcc;
     --color-text-title: #1fa47c;
-    --color-grey: rgb(67, 134, 85);
-    --color-box-shadow: #1bce2a;
+    --color-grey: rgb(68, 138, 87);
+    --color-box-shadow: #7f9281;
     --color-box-shadow2: #205134;
     --color-focus: #375b3e;
+    /* #28DBA0 */
 }
 
 /* Estilos Generales */
@@ -50,7 +51,7 @@ html{
     overflow-x: hidden;
 }
 body{
-    background: url("../img/pattern.png");
+    background: url("../img/foto-malaga-tarde.jpg");
 }
 /* wrap queremos que los elementos "hijos" dispongan de estos estilos */
 .header__wrap, .content__wrap, .footer__wrap{
@@ -69,7 +70,7 @@ body{
 }
 .content__info{
     display: grid;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 2fr;
 }
 .logo__gear, .card__icon, .search__icon, .aside-box__icon, .social__icon{
     font-family: "WebSymbolsRegular";
@@ -83,14 +84,14 @@ body{
     height: 70px;
     background-color: var(--color-bg);
     font-family: "BebasNeue";
-    color: var(--color-text-white);
+    color: black;
 }
 
 .header__logo{
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 200px;
-    height: 50px;
+    height: 55px;
     background-color: var(--color-primary);
     text-align: center;
     margin-top: 8px;
@@ -100,6 +101,7 @@ body{
     overflow: hidden;
     /* transición */
     transition: all 500MS ease-in-out ;
+    border-radius: 10px;
 }
 
 .header__logo h3{
@@ -136,6 +138,7 @@ body{
     font-size: 30px;
     margin-top: 4px;
     margin-left: 20px;
+    margin-bottom: 10px;
     /*Alahoradecrearanimación*/animation: giraRueda 3s infinite linear;
     -webkit-animation: giraRueda 3s infinite linear;
 }
@@ -241,9 +244,11 @@ body{
 /* Tarjetas */
 .content__cards{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr  ;
 }
 .cards__card{
+    opacity: 1;
+    background-color: #375b3e;
     display: grid;
     width: 240px;
     height: 260px;
@@ -270,7 +275,7 @@ body{
 }
 
 .cards__card .card__icon{
-    display: block;
+    display: grid;
     width: 100%;
     height: 110px;
     font-size: 50px;

@@ -1,0 +1,27 @@
+body {
+  background-color: #ccc;
+}
+
+h1 {
+  color: black;
+  background-color: blue;
+}
+
+/*anidacion*/
+.caja {
+  border: 1px solid black;
+  margin: 0px auto;
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+}
+.caja h2 {
+  color: blue;
+}
+.caja .info {
+  border: 1px solid black;
+}
+.caja .info h2 {
+  color: black;
+  font-size: 18px;
+}/*# sourceMappingURL=estilos.css.map */
