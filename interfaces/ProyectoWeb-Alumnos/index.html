@@ -19,6 +19,13 @@
                 <span class="logo__gear">S</span>
                 <h3> COMPISO</h3>
             </div>
+            <!-- <h3 class="lateral__title">BUSCAR</h3> -->
+            <div class="lateral__search">
+                <form>
+                    <input type="text">
+                    <input type="button" value="L" class="search__icon">
+                </form>
+            </div>
             <nav class="header__menu">
                 <ul class="menu__list">
                     <li class="list__item"><a href="#">INICIO</a></li>
@@ -42,54 +49,47 @@
             <!-- Inicio Tarjetas -->
             <div class="content__cards">
                 <div class="cards__card">
-                    <p class="card__icon">H</p>
-                    <h2 class="card__category">Desarrollo Web</h2>
+                    <img class="card__icon" id="tarjeta1" src="./img/foto-casa.png">
+                    <h2 class="card__category">Buscar Pisos</h2>
                     <p class="card__description">
-                        Aprende los principales lenguajes para desarrollar webs. !Conviértete en Web Master!
+                        Busca los mejores pisos, que se adapten a ti al mejor precio.
                     </p>
                 </div>
                 <div class="cards__card">
-                    <p class="card__icon">_</p>
-                    <h2 class="card__category">Sistemas Operativos</h2>
+                    <img class="card__icon" id="tarjeta2" src="./img/foto-usuario.png">
+                    <h2 class="card__category">Buscar usuarios</h2>
                     <p class="card__description">
-                        Aprende a administrar sistemas operativos linux y windows.
+                       Busca a tus compañeros ideales para que te acompañen en tu nueva aventura.
                     </p>
                 </div>
                 <div class="cards__card">
-                    <p class="card__icon">S</p>
-                    <h2 class="card__category">Hardware</h2>
+                    <img class="card__icon" id="tarjeta3" src="./img/foto-imagen.png">
+                    <h2 class="card__category">Subir fotos</h2>
                     <p class="card__description">
-                        Conoce los entresijos del hardware.
+                        Sube las fotos que necesites para darte a conocer a ti o a tu piso.
                     </p>
                 </div>
                 <div class="cards__card">
-                    <p class="card__icon">u</p>
-                    <h2 class="card__category">Redes e Internet</h2>
+                    <img class="card__icon" id="tarjeta4" src="./img/foto-ub.png">
+                    <h2 class="card__category">Cerca de mi</h2>
                     <p class="card__description">
-                        Aprende a configurar y administrar redes informáticas y servidores.
+                        Busca aquello que necesitesa través de tu ubicación para mejorar los resultados de búsqueda.
                     </p>
                 </div>
                 <div class="cards__card">
-                    <p class="card__icon">u</p>
-                    <h2 class="card__category">Redes e Internet</h2>
+                    <img class="card__icon" id="tarjeta5" src="./img/foto-archivo.png">
+                    <h2 class="card__category">Mi informacion</h2>
                     <p class="card__description">
-                        Aprende a configurar y administrar redes informáticas y servidores.
+                        Accede a toda tu información en tan solo un click.
                     </p>
                 </div>
                 <div class="cards__card">
-                    <p class="card__icon">u</p>
-                    <h2 class="card__category">Redes e Internet</h2>
+                    <img class="card__icon" id="tarjeta5" src="./img/foto-dinero.png">
+                    <h2 class="card__category">Formas de pago</h2>
                     <p class="card__description">
-                        Aprende a configurar y administrar redes informáticas y servidores.
+                        Elige la forma de pago que prefieras.
                     </p>
                 </div>
-                <!-- <div class="cards__card">
-                    <p class="card__icon">a</p>
-                    <h2 class="card__category">Bases de Datos</h2>
-                    <p class="card__description">
-                        Aprende a instalar y administrar bases de datos.
-                    </p>
-                </div> -->
             </div>
             <!-- fin de Tarjetas -->
         </section>
@@ -97,13 +97,7 @@
         <!-- Inicio de Barra Lateral -->
     <div class="content__body">
         <aside class="content__lateral">
-            <h3 class="lateral__title">BUSCAR</h3>
-            <div class="lateral__search">
-                <form>
-                    <input type="text">
-                    <input type="button" value="L" class="search__icon">
-                </form>
-            </div>
+            
             <h3 class="lateral__title">LOGIN</h3>
             <div class="lateral__login aside-box">
                 <form>
@@ -140,6 +134,8 @@
             </div>
             <h3 class="lateral__title">PATROCINADORES</h3>
             <div class="lateral__sponsors aside-box">
+                <img class="foto__patrocinador" id="patrocinador1" src="./img/foto-patro1.png">
+                <img class="foto__patrocinador" id="patrocinador1" src="./img/foto-patrocinador2.jfif">
             </div>
         </aside>
         <!-- fin de Aside -->
@@ -149,63 +145,39 @@
             <div class="clearfix"></div>
             <article class="articles__article">
                 <div class="article__datos">
-                    <span>Fecha: 01 de enero</span>
-                    <span>Categoría: Pruebas</span>
-                </div>
-                <h4 class="article__subtitle">
-                    <a href="#">Título de artículo 1</a>
-                </h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
+                    <span>Zona: Las delicias</span>
+                    <img class="img__pisos" src="./img/piso1.jpg">
+                </div> 
             </article>
             <article class="articles__article">
                 <div class="article__datos">
-                    <span>Fecha: 01 de febrero</span>
-                    <span>Categoría: Pruebas</span>
-                </div>
-                <h4 class="article__subtitle">
-                    <a href="#">Título de artículo 2</a>
-                </h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
+                    <span>Zona: Huelin</span>
+                    <img class="img__pisos" src="./img/piso2.jpg">
+                </div> 
             </article>
             <article class="articles__article">
                 <div class="article__datos">
-                    <span>Fecha: 01 de marzo</span>
-                    <span>Categoría: Pruebas</span>
-                </div>
-                <h4 class="article__subtitle">
-                    <a href="#">Título de artículo 3</a>
-                </h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
+                    <span>Zona: El perchel</span>
+                    <img class="img__pisos" src="./img/piso3.jpg">
+                </div> 
             </article>
             <article class="articles__article">
                 <div class="article__datos">
-                    <span>Fecha: 01 de abril</span>
-                    <span>Categoría: Pruebas</span>
-                </div>
-                <h4 class="article__subtitle">
-                    <a href="#">Título de artículo 4</a>
-                </h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
+                    <span>Zona: La malagueta</span>
+                    <img class="img__pisos" src="./img/piso4.webp">
+                </div> 
             </article>
             <article class="articles__article">
                 <div class="article__datos">
-                    <span>Fecha: 01 de agosto</span>
-                    <span>Categoría: Pruebas</span>
-                </div>
-                <h4 class="article__subtitle">
-                    <a href="#">Título de artículo 5</a>
-                </h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
+                    <span>Barrio: El torcal</span>
+                    <img class="img__pisos" src="./img/piso5.jfif">
+                </div> 
             </article>
             <article class="articles__article">
                 <div class="article__datos">
-                    <span>Fecha: 01 de agosto</span>
-                    <span>Categoría: Pruebas</span>
-                </div>
-                <h4 class="article__subtitle">
-                    <a href="#">Título de artículo 6</a>
-                </h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
+                    <span>Barrio: El palo</span>
+                    <img class="img__pisos" src="./img/piso6.jfif">
+                </div> 
             </article>
             <article class="articles__blog">
                 <a href="#">Ir al Blog</a>

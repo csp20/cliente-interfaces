@@ -50,9 +50,11 @@ html{
     font-size: 62.5%;
     overflow-x: hidden;
 }
-body{
-    background: url("../img/foto-malaga-tarde.jpg");
+body {
+    background: url("../img/foto-malagaaaaaaaaa.jpeg") no-repeat center center fixed;
+    background-size: cover; /* Ajusta la imagen para que cubra toda la pantalla */
 }
+
 /* wrap queremos que los elementos "hijos" dispongan de estos estilos */
 .header__wrap, .content__wrap, .footer__wrap{
     /* le asignamo 1200 para vista de escritorio */
@@ -61,7 +63,7 @@ body{
 }
 .header__wrap{
     display: grid;
-    grid-template-columns: 3fr 3fr;
+    grid-template-columns: 1fr 2fr 2fr;
 }
 .content__wrap{
     display: grid;
@@ -89,7 +91,7 @@ body{
 
 .header__logo{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:1fr 1fr;
     width: 200px;
     height: 55px;
     background-color: var(--color-primary);
@@ -265,9 +267,16 @@ body{
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+/*imagenes en las cartas */
+.card__icon{
+    padding-top: 5px;
+    width: 15px; /* Ajusta el ancho de la imagen */ 
+    height: 15px; /* Ajusta la altura de la imagen */
+    object-fit: scale-down;
+}
 /*efecto hover en las cartas */
 .cards__card:hover{
-    background-color: var(--color-bg);
+    background-color: var(--color-backgroung);
 }
 
 .cards__card:last-child{
@@ -346,11 +355,26 @@ body{
 
 /* Barra lateral */
 .content__lateral{
+    display: grid;
     width: 300px;
     min-height: 1070px;
     font-family: "TrebuchetMS";
-    float: left;
+    
     margin: 20px;
+    animation: muestroIcono 750ms linear;
+}
+/* keyframes */
+@keyframes muestroIcono {
+    from{
+        transform: translateX(900%);
+        -webkit-transform: translateX(900%);
+        -moz-transform: translateX(900%);
+        -ms-transform: translateX(900%);
+        -o-transform: translateX(900%);
+}to {
+        transform: translatex(0%);
+       
+}
 }
 .lateral__title{
     display: block;
@@ -372,7 +396,7 @@ body{
     margin-top: 0px;
 }
 .lateral__search{
-    width: 90%;
+    width: 40%;
     height: 30px;
     margin: 10px auto;
     background-color: var(--color-text-white);
@@ -508,13 +532,8 @@ body{
 .lateral__social .social__overlay{
     display: block;
     height: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    font-size: large;
     letter-spacing: 1px;
-    text-shadow: 0px 0px 1px var(--color-backgroung);
-    border: 3px solid var(--color-text-white);
-    box-shadow: 0px 0px 4px var(--color-backgroung);
-    background: #F4F7FE;
     position: absolute;
     padding: 5px;
     margin-left: 70px;
@@ -530,6 +549,19 @@ body{
     opacity: 1;
     transform: translateX(0%);
 }
+/*imagenes de articulos*/
+.img__pisos {
+    width: 300px;
+    height: 180px;
+    padding-top: 15px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.img__pisos:hover {
+    transform: scale(1.2);
+    
+}
 
 /* Artículos */
 .content__articles{
@@ -537,7 +569,17 @@ body{
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     align-items: center;
-    
+    animation: muestroIcono 750ms linear;
+}
+/* keyframes */
+@keyframes muestroIcono {
+    from{
+        transform: translateX(-200%);
+       
+}to {
+        transform: translatex(0%);
+       
+}
 }
 
 .content__articles h2{
@@ -610,13 +652,17 @@ body{
 }
 
 .articles__blog{
-    height: 100px;
+    height: 70px;
+    background-color: #205134;
     margin-top: 60px;
-    line-height: 100px;
+    line-height: 70px;
     text-align: center;
     font-family: "BebasNeue";
-    /* transición */
-
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
 }
 .articles__blog a{
     font-family: "BebasNeue";
