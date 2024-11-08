@@ -10,7 +10,13 @@
  
 }
 @media (max-width: 920px){
-
+/* aqui */
+.content__cards{
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 700px;
+    padding-left: 200px;
+}
 }
 
 @media (max-width: 890px){
