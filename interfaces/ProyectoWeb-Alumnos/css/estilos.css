@@ -595,18 +595,9 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     align-items: center;
-    /* animation: muestroIcono 750ms linear; */
+    
 }
-/* keyframes 
-@keyframes muestroIcono {
-    from{
-        transform: translateX(-200%);
-       
-}to {
-        transform: translatex(0%);
-       
-}
-}*/
+
 
 .content__articles h2{
     display: grid;
@@ -628,6 +619,7 @@ body {
 }
 .articles__title{
     border-radius: 10px;
+    grid-column: span 2;
     
 }
 .articles__article{
@@ -700,6 +692,7 @@ body {
 }
 
 .articles__blog{
+    grid-column: span 2;
     height: 70px;
     background-color: #205134;
     margin-top: 60px;
