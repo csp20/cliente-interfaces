@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Publicar Producto de Segunda Mano</title>
+  </head>
+  <body>
+    <form id="form">
+      <label for="nombre">Nombre*</label>
+      <input type="text" name="nombre" id="nombre" />
+      <span role="alert" id="nombreError" aria-hidden="true">Ingrese su nombre, por favor</span>
+      <br /><br />
+
+      <label for="email">E-mail*</label>
+      <input type="email" name="email" id="email" />
+      <span role="alert" id="emailError" aria-hidden="true">Ingrese un e-mail válido, por favor</span>
+      <br /><br />
+
+      <label for="precio">Precio*</label>
+      <input type="number" name="precio" id="precio" />
+      <span role="alert" id="precioError" aria-hidden="true">Ingrese un precio válido, por favor</span>
+      <br /><br />
+
+      <label for="imagen">Imagen*</label>
+      <input type="file" name="imagen" id="imagen" accept="image/*" />
+      <span role="alert" id="imagenError" aria-hidden="true">Ingrese una imagen válida (máx. 5MB), por favor</span>
+      <br /><br />
+
+      <label for="politicas">
+        <input type="checkbox" name="politicas" id="politicas" />
+        Acepto las políticas de privacidad*
+      </label>
+      <span role="alert" id="politicasError" aria-hidden="true">Debe aceptar las políticas de privacidad</span>
+      <br /><br />
+
+      <input type="submit" name="enviar" id="enviar" />
+    </form>
+    <script>
+      function validar(event) {
+        event.preventDefault();
+        let res = "todo correcto";
+        let nombre = document.getElementById("nombre").value;
+        let email = document.getElementById("email").value;
+        let precio = document.getElementById("precio").value;
+        let imagen = document.getElementById("imagen").files[0];
+        let politicas = document.getElementById("politicas").checked;
+
+        // Validar nombre
+        let patronNombre = /^[a-zA-Z áéíóúÁÉÍÓÚÇçÑñ]+$/;
+        if (nombre === "") {
+          res = "error, el campo de nombre está vacío";
+          document.getElementById("nombreError").style.display = "inline";
+        } else if (!patronNombre.test(nombre)) {
+          res = "error, el nombre solo debe contener letras, no números";
+          document.getElementById("nombreError").style.display = "inline";
+        } else {
+          document.getElementById("nombreError").style.display = "none";
+        }
+
+        // Validar e-mail
+        let patronEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email === "") {
+          res = "error, el campo de e-mail está vacío";
+          document.getElementById("emailError").style.display = "inline";
+        } else if (!patronEmail.test(email)) {
+          res = "error, el e-mail no es válido";
+          document.getElementById("emailError").style.display = "inline";
+        } else {
+          document.getElementById("emailError").style.display = "none";
+        }
+
+        // Validar precio
+        if (precio === "" || isNaN(precio) || precio <= 0) {
+          res = "error, el campo de precio está vacío o no es válido";
+          document.getElementById("precioError").style.display = "inline";
+        } else {
+          document.getElementById("precioError").style.display = "none";
+        }
+
+        // Validar imagen
+        if (!imagen) {
+          res = "error, el campo de imagen está vacío";
+          document.getElementById("imagenError").style.display = "inline";
+        } else if (imagen.size > 5 * 1024 * 1024) {
+          res = "error, la imagen no debe superar los 5MB";
+          document.getElementById("imagenError").style.display = "inline";
+        } else {
+          document.getElementById("imagenError").style.display = "none";
+        }
+
+        // Validar políticas
+        if (!politicas) {
+          res = "error, debe aceptar las políticas de privacidad";
+          document.getElementById("politicasError").style.display = "inline";
+        } else {
+          document.getElementById("politicasError").style.display = "none";
+        }
+
+        alert(res);
+        if (res == "todo correcto") {
+          window.location.reload();
+        }
+      }
+
+      document.getElementById("form").addEventListener("submit", validar);
+    </script>
+  </body>
+</html>
