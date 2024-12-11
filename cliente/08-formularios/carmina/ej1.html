@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="form">
+        <label for="nombre"> Nombre* </label>
+        <input type="text" name="nombre" id="nombre" />
+        <span role="alert" id="nombreError" aria-hidden="true">
+            Ingrese su nombre, por favor
+        </span>
+        <br><br>
+        <label for="password"> password* </label>
+        <input type="password" name="password" id="password" />
+        <span role="alert" id="passwordError" aria-hidden="true">
+            Ingrese su password, por favor
+        </span>
+        <br><br>
+        <input type="submit" name="enviar">
+        <!-- <button id="enviar">Enviar</button> -->
+    </form>
+    <script>
+        const enviar = document.getElementById("enviar");
+
+        enviar.addEventListener("click", validar);
+
+        function validar() {
+            let res = "todo correcto";
+            let nombre = document.getElementById("nombre");
+            let password = document.getElementById("password");
+
+            if (nombre == "") {
+                res = "error, el campo esta vacio";
+            }else{
+                
+            }
+        }
+    </script>
+</body>
+
+</html>
