@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-
-<body>
+  </head>
+  <body>
     <form id="form">
-        <label for="nombre"> Nombre* </label>
-        <input type="text" name="nombre" id="nombre" />
-        <span role="alert" id="nombreError" aria-hidden="true">
-            Ingrese su nombre, por favor
-        </span>
-        <br><br>
-        <label for="password"> password* </label>
-        <input type="password" name="password" id="password" />
-        <span role="alert" id="passwordError" aria-hidden="true">
-            Ingrese su password, por favor
-        </span>
-        <br><br>
-        <input type="submit" name="enviar">
-        <!-- <button id="enviar">Enviar</button> -->
+      <label for="nombre">Nombre*</label>
+      <input type="text" name="nombre" id="nombre" />
+      <span role="alert" id="nombreError" aria-hidden="true">Ingrese su nombre, por favor</span>
+      <br /><br />
+      <label for="password">Password*</label>
+      <input type="password" name="password" id="password" />
+      <span role="alert" id="passwordError" aria-hidden="true">Ingrese su password, por favor</span>
+      <br /><br />
+      <input type="submit" name="enviar" id="enviar" />
     </form>
     <script>
-        const enviar = document.getElementById("enviar");
+      function validar(event) {
+        event.preventDefault();
+        let res = "todo correcto";
+        let nombre = document.getElementById("nombre").value;
+        let password = document.getElementById("password").value;
 
-        enviar.addEventListener("click", validar);
-
-        function validar() {
-            let res = "todo correcto";
-            let nombre = document.getElementById("nombre");
-            let password = document.getElementById("password");
-
-            if (nombre == "") {
-                res = "error, el campo esta vacio";
-            }else{
-                
-            }
+        // Validar nombre
+        let patronNombre = /^[a-zA-Z áéíóúÁÉÍÓÚÇçÑñ]+$/;
+        if (nombre === "") {
+          res = "error, el campo de nombre está vacío";
+          document.getElementById("nombreError").style.display = "inline";
+        } else if (!patronNombre.test(nombre)) {
+          res = "error, el nombre solo debe contener letras, no números";
+          document.getElementById("nombreError").style.display = "inline";
+        } else {
+          document.getElementById("nombreError").style.display = "none";
         }
-    </script>
-</body>
 
+        // Validar contraseña
+        let patronPassword = /^[a-zA-Z0-9!@#$%^&*()_+\-=':"\\|,.<>\/?]+$/;
+        if (password === "") {
+          res = "error, el campo de contraseña está vacío";
+          document.getElementById("passwordError").style.display = "inline";
+        } else if (!patronPassword.test(password)) {
+          res = "error, la contraseña contiene caracteres no permitidos";
+          document.getElementById("passwordError").style.display = "inline";
+        } else {
+          document.getElementById("passwordError").style.display = "none";
+        }
+        document.write(res);
+        //alert(res);
+        if (res == "todo correcto") {
+          window.location.reload();
+        }
+      }
+
+      document.getElementById("form").addEventListener("submit", validar);
+    </script>
+  </body>
 </html>
+
