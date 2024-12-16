@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Validación</title>
+    <style>
+        .error {
+            color: red;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    1. matricula coche
+    2.DNI
+    3.Fecha de aqui a un año 
+    4. Matricula de moto 49cc
+    5. cuenta bancaria -->
+    <form id="form">
+        <label for="matricula">Matrícula coche*</label>
+        <input type="text" name="matricula" pattern="[0-9]{4} [B-DF-HJ-NP-TV-Z]{3}" id="matricula" required />
+        <br /><br />
+
+        <label for="DNI">DNI*</label>
+        <input type="text" name="DNI" pattern="[0-9]{8}[A-Z]" id="DNI" required />
+        <br /><br />
+
+        <label for="Fecha">Fecha (de aquí a un año)*</label>
+        <input type="date" name="Fecha" id="Fecha" required />
+        <br /><br />
+
+        <label for="matricula_moto">Matrícula moto 49cc*</label>
+        <input type="text" name="matricula_moto" pattern="[0-9]{4} [B-DF-HJ-NP-TV-Z]{3}" id="matricula_moto" required />
+        <br /><br />
+
+        <label for="cuenta_bancaria">Cuenta bancaria*</label>
+        <input type="text" name="cuenta_bancaria" pattern="[A-Z]{2}[0-9]{22}" id="cuenta_bancaria" required />
+
+        <br /><br />
+
+        <label for="contrasena">Contraseña*</label>
+        <input type="password" name="contrasena" id="contrasena" required />
+        <br /><br />
+
+        <label for="ip">IP*</label>
+        <input type="text" name="ip" id="ip" required />
+        <br /><br />
+
+        <label for="num_serie">Número de serie*</label>
+        <input type="text" name="num_serie" id="num_serie" required />
+        <br /><br />
+
+        <label for="dominio">Dominio*</label>
+        <input type="text" name="dominio" id="dominio" required />
+        <br /><br />
+
+        <input type="submit" name="enviar" id="enviar" />
+    </form>
+
+    <script>
+        document.getElementById('form').addEventListener('submit', function(event) {
+            let valid = true;
+
+            // Contraseña: 8 caracteres, puede incluir *, _, -
+            let contrasena = document.getElementById('contrasena').value;
+            let contrasenaPattern = /^[\w*-]{8,}$/;
+            if (!contrasenaPattern.test(contrasena)) {
+                valid = false;
+                alert('La contraseña debe tener al menos 8 caracteres y puede incluir *, _, -');
+            }
+
+            // IP: formato de dirección IP
+            let ip = document.getElementById('ip').value;
+            let ipPattern = /^[0-255].[0-255].[0-255].[0-255]$/;
+            if (!ipPattern.test(ip)) {
+                valid = false;
+                alert('La dirección IP no es válida.');
+            }
+
+            // Número de serie: cualquier formato que desees
+            let numSerie = document.getElementById('num_serie').value;
+            let numSeriePattern = /^[a-zA-Z0-9-]+$/;
+            if (!numSeriePattern.test(numSerie)) {
+                valid = false;
+                alert('El número de serie no es válido.');
+            }
+
+            // Dominio: formato de dominio
+            let dominio = document.getElementById('dominio').value;
+            let dominioPattern = /^[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
+            if (!dominioPattern.test(dominio)) {
+                valid = false;
+                alert('El dominio no es válido.');
+            }
+
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
