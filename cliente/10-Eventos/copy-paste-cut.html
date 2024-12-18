@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Excepturi ipsa accusamus officiis reiciendis quibusdam quisquam
+    cumque sapiente ratione, impedit tenetur quasi nam ad facilis rem 
+    ab quis! Quasi, voluptas consectetur?
+    </div>
+    <br>
+    <input id="pegar">
+    <script>
+        let texto = document.getElementById("texto");
+        let pegaar = document.getElementById("pegar");
+        texto.addEventListener("copy", copiar);
+        pegaar.addEventListener("paste", pegar);
+        
+        function copiar(){
+            texto.style.backgroundColor = "red";
+            navigator.clipboard.writeText("hola");
+        }
+        function pegar(){
+            texto.style.backgroundColor = "blue";
+        }
+    </script>
+</body>
+</html>

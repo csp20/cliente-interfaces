@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="nombre">Nombre*</label>
+        <input type="text" name="nombre" id="nombre" />
+        <br /><br />
+        <label for="edad">edad*</label>
+        <input type="edad" name="edad" id="edad"/>
+        <br /><br />
+        <input type="submit" name="enviar" id="enviar" />
+      </form>
+      <script>
+        // https://www.w3schools.com/jsref/dom_obj_event.asp
+
+        // onblur y onfocus
+
+        //CORREGIIIIIIIIIIIIIR
+
+        let x = document.getElementById("myForm");
+        x.addEventListener("focus", myFocusFunction, true);
+        x.addEventListener("blur", myBlurFunction, true);
+        
+        function myFocusFunction() {
+          document.getElementById("nombre").style.backgroundColor = "yellow";
+          document.getElementById("edad").style.backgroundColor = "green";
+        }
+        
+        function myBlurFunction() {
+          document.getElementById("nombre").style.backgroundColor = "red";
+          document.getElementById("red").style.backgroundColor = "blue";
+        }
+        </script>
+</body>
+</html>
