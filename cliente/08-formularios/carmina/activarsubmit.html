@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <label for="nombre">Nombre*</label>
+        <input type="text" name="nombre" id="nombre" />
+        <span role="alert" id="nombreError" aria-hidden="true">Ingrese su nombre, por favor</span>
+        <br><br>
+        <label for="tlfn">Teléfono*</label>
+        <input type="text" name="tlfn" id="telefono" />
+        <span role="alert" id="tlfnError" aria-hidden="true">Ingrese su teléfono, por favor</span>
+        <br><br>
+        <button id="enviar" disabled>Enviar</button>
+    </form>
+    <script>
+        document.getElementById("nombre").addEventListener("input",activarSubmit);
+        document.getElementById("telefono").addEventListener("input",activarSubmit);
+        function activarSubmit(){
+            let nombre = document.getElementById("nombre").value;
+            let telefono = document.getElementById("telefono").value;
+            let submit = document.getElementById("enviar");
+            if (nombre !== "" && telefono !== "") {
+                submit.disabled = false;
+            } else {
+                submit.disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>
