@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+</head>
+<body>
+    <!-- 8 Obtén todos los elementos con la clase .carta añadeles un borde  y cambia su color de borde a verd -->
+    <p class="carta">1</p>
+    <p class="carta">2</p>
+    <p class="carta">3</p>
+    <p class="carta">4</p>
+    <p class="carta">5</p>
+    <p class="carta">6</p>
+    <script>
+        $(document).ready(function() {
+            $(".carta").on("click", function () {
+                if ($(this).css("border-color") === "rgb(0, 128, 0)") { // verde
+                    $(this).css("border-color", "red");
+                } else {
+                    $(this).css("border", "2px solid green");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
