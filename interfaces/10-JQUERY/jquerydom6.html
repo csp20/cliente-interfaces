@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <!-- 6 Añade un nuevo elemento <li> al final de una lista con id #lista-->
+    <ul class="lista">
+        <li>fgcg</li>
+        <li>recb</li>
+        <li>rebcb</li>
+        <li>t4cb</li>
+        <li>cbbb</li>
+    </ul>
+    <script>
+        $(document).ready(function() {
+            $(".lista").on("click", function () {
+                $(this).append("<li> item ultimo</li>");
+                //$("li").appendto("#lista");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

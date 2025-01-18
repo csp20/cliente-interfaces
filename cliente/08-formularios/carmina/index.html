@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- si es obligatorio
+        tam minimo
+        tam maximo
+        contenga palabra
+        solo caracteres especificos
+        num de lineas en un label
+        limitar que no hay 2 lineas
+        -->
+    <form action="#" name="form1">
+       
+        <textarea id="texto" name="text" 
+        rows="4" cols="30" oninput="contarpalabras()"></textarea>
+        <br>
+        <input type="text" id="cantidad">
+    </form>
+    <script>
+        function contarpalabras(){
+            let texto = document.getElementById("texto").value.trim();
+            let palabras = texto.split(/\s+/);
+            let numpalabras = palabras.length;
+            if (palabras == "") {
+                numpalabras = 0;
+            }
+            document.getElementById("cantidad").value = "numero de palabras: " + numpalabras;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <label for="nombre"> Nombre* </label>
+        <input type="text" name="nombre" id="nombre" />
+        <span role="alert" id="nombreError" aria-hidden="true">
+            Ingrese su nombre, por favor
+        </span>
+        <br><br>
+        <label for="tlfn"> telefono* </label>
+        <input type="text" name="tlfn" id="tlfn" />
+        <span role="alert" id="tlfnError" aria-hidden="true">
+            Ingrese su tlfn, por favor
+        </span>
+        <br><br>
+        <button id="borrar">borrar</button>
+        <button id="enviar">Enviar</button>
+    </form>
+    <script>
+        // setInterval(() => {
+        //     console.log("hola");
+        // }, 2000);
+
+        // clearInterval(B);
+
+       document.getElementById("borrar").onclick = function(){
+             borrar = window.confirm("se van a borrar los datos introducidos en el form");
+            if (borrar) {
+                alert("se ha borrado");
+                document.getElementById("form").reset();
+            }else{
+                alert("no se ha borrao");
+            }
+        }
+
+
+    </script>
+</body>
+</html>

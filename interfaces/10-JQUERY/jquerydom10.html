@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+</head>
+<body>
+    <!-- 10 Selecciona todos los <span> dentro de un <div> con id #contenedor y cambia su
+        color de fondo a gris -->
+    <div id="contenedor">
+       <span>texto 1</span>
+       <span>texto 2</span>
+    </div>
+    <br>
+    <div id="contenedor">
+        <span>texto 1</span>
+        <span>texto 2</span>
+    </div>
+   
+    <script>
+        $(document).ready(function() {
+            $("#contenedor").on("click", function () {
+                $("#contenedor span").css("background-color","gray");
+            });
+        });
+
+        //$("#contenedor span").css("background-color","gray");
+//         Ejercicio 18
+// for(let i=0; i < $(".producto").length; i++){
+//                 $(".producto:eq("+i+")").attr("data-id",i);
+//             }
+    </script>
+</body>
+</html>
