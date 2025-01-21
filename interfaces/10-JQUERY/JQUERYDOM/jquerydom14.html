@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+</head>
+<body>
+    <!-- 14 Selecciona el segundo <div> en el documento y cámbiale el fondo a amarillo-->
+<div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, 
+    illum delectus repellendus quia nostrum harum placeat veritatis
+     nesciunt corrupti asperiores saepe? Obcaecati, consequuntur rem? 
+     Voluptatem sint nesciunt eligendi perspiciatis error.</div>
+<div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Eligendi delectus, recusandae quis, nisi ea repellat iste dolorem illo,
+    sequi molestiae iusto assumenda quidem laboriosam.
+     Voluptas cumque alias vero necessitatibus optio.</div>
+<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Nisi pariatur aspernatur deserunt error iure deleniti quam 
+    impedit dolore repudiandae quibusdam quae in quis labore,
+     placeat incidunt aliquam doloremque id et?</div>
+<script>
+   $(document).ready(function(){
+    $("div:eq(0)").css("background-color", "red");
+    $("div:eq(1)").css("background-color", "yellow");
+    $("div:eq(2)").css("background-color", "red");
+});
+
+
+</script>
+</body>
+</html>
