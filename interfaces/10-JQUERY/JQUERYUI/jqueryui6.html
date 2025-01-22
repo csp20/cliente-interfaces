@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <!--6 Haz que el color de fondo de un <div> cambie de manera animada cuando se pase el
+ratón sobre él-->
+
+    <div class="animado" style="background-color: red;" >ele eleeeeeeee</div>
+    
+    <script>
+        $(document).ready(function () {
+            $(".animado").on("mouseover", function () {
+                if ($(this).css("background-color") === "rgb(255, 0, 0)") { // Si el color es rojo
+                    $(this).css("background-color", "blue");
+                } else {
+                    $(this).css("background-color", "red");
+                }
+            });
+        });
+
+        // $(document).ready(function () {
+        //     $(".animado").on("mouseover", function () {
+        //         $(this).css("background-color", "blue");
+        //     });
+        // });
+    </script>
+</body>
+
+</html>
