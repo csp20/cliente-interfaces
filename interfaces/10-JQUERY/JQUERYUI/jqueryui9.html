@@ -9,8 +9,7 @@
 </head>
 
 <body>
-    <!--7 Usa un efecto de desvanecimiento para mostrar y ocultar un <div> al hacer clic en
-un botón-->
+    <!--9-Usa el método toggle() para alternar la visibilidad de un elemento al hacer clic.-->
 
     <div class="animado" style="background-color: red;" >LA JIRAFA CON LAS GAFAS </div>
     <button id="pulsar">pulsar</button>
@@ -18,7 +17,7 @@ un botón-->
     <script>
         $(document).ready(function () {
             $("#pulsar").on("click", function () {
-                $(".animado").fadeToggle();
+                $(".animado").toggle();
             });
         });
 

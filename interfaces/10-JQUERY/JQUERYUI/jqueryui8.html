@@ -9,19 +9,19 @@
 </head>
 
 <body>
-    <!--7 Usa un efecto de desvanecimiento para mostrar y ocultar un <div> al hacer clic en
-un botón-->
+    <!-- Haz que un texto se deslice de izquierda a derecha usando show() y hide(). -->
 
-    <div class="animado" style="background-color: red;" >LA JIRAFA CON LAS GAFAS </div>
+    <div class="animado" style="background-color: red; position: absolute; left: -200px;">LA JIRAFA CON LAS GAFAS</div>
     <button id="pulsar">pulsar</button>
     
     <script>
         $(document).ready(function () {
             $("#pulsar").on("click", function () {
-                $(".animado").fadeToggle();
+                $(".animado").show().animate({left: '+=200px'}, 1000, function() {
+                    $(this).hide().css('left', '-200px');
+                });
             });
         });
-
     </script>
 </body>
 
