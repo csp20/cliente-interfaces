@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Radio Buttons y Checkboxes</title>
+    <script>
+        function mostrarSeleccion() {
+            var generoSeleccionado = document.querySelector('input[name="genero"]:checked');
+            var interesesSeleccionados = document.querySelectorAll('input[name="intereses"]:checked');
+
+            var resultado = "Género seleccionado: " + (generoSeleccionado ? generoSeleccionado.value : "Ninguno") + "\\n";
+            resultado += "Intereses seleccionados: \\n";
+
+            interesesSeleccionados.forEach(function(interes) {
+                resultado += "- " + interes.value + "\\n";
+            });
+
+            console.log(resultado);
+        }
+    </script>
+</head>
+<body>
+    <h2>Formulario de Preferencias</h2>
+    <form id="formulario-preferencias" onsubmit="mostrarSeleccion(); return false;">
+        <div>
+            <h3>Género preferido (solo una opción):</h3>
+            <label>
+                <input type="radio" name="genero" value="accion"> Acción
+            </label><br>
+            <label>
+                <input type="radio" name="genero" value="comedia"> Comedia
+            </label><br>
+            <label>
+                <input type="radio" name="genero" value="drama"> Drama
+            </label>
+        </div>
+
+        <div>
+            <h3>Intereses (múltiples opciones):</h3>
+            <label>
+                <input type="checkbox" name="intereses" value="deporte"> Deporte
+            </label><br>
+            <label>
+                <input type="checkbox" name="intereses" value="musica"> Música
+            </label><br>
+            <label>
+                <input type="checkbox" name="intereses" value="arte"> Arte
+            </label>
+        </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
