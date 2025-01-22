@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="document.formulario.campo.focus(); document.formulario.campo.select()">
+    <form id="form">
+        <label for="nombre">Nombre*</label>
+        <input type="text" name="nombre" id="nombre" />
+        <span role="alert" id="nombreError" aria-hidden="true">Ingrese su nombre, por favor</span>
+        <br><br>
+        <label for="tlfn">Teléfono*</label>
+        <input type="text" name="tlfn" id="telefono" />
+        <span role="alert" id="tlfnError" aria-hidden="true">Ingrese su teléfono, por favor</span>
+        <br><br>
+        <button id="enviar" >Enviar</button>
+    </form>
+    <script>
+        function asignafoco(nombreForm,nombreCampo){
+            let elemento =document.forms[nombreForm].elements[nombreCampo];
+            elemento.focus();
+            elemento.select();
+        }
+    </script>
+</body>
+</html>

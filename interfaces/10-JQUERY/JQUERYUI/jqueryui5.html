@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <!--5 Haz que un <div> con clase .animado se deslice hacia abajo (slideDown) al hacer
+clic en un botón con id #slideButton-->
+
+    <div class="animado" hidden>ele eleeeeeeee</div>
+    <button id="slideButton">boton para abajo</button>
+    <script>
+        $(document).ready(function () {
+            $("#slideButton").on("click", function () {
+                $(".animado").slideDown();
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

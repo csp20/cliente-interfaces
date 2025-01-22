@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+</head>
+<body>
+    <script>
+         // 1-Selecciona el elemento con la clase .item y cámbiale el texto.
+         $("#cajaTexto").click(function (e) {
+                $(this).val("Hola chicos");
+            })
+        // 2-Selecciona el primer elemento con la clase .producto y cambia su color de fondo a azul.
+            $(".producto").css("background", "blue");
+        // 3-Accede al primer <div> de la página y agrega el texto "Hola Mundo".
+            $('div:first').text("Hola mundo");
+        // 4-Selecciona el elemento con id #titulo y cambia su color a rojo.
+            $("#titulo").css("color", "red");
+        // 5-Accede a todos los elementos <p> en la página y cambia su tamaño de fuente a 18px.
+            $('p').css('font-size', '20px');
+        // 6-Añade un nuevo elemento <li> al final de una lista con id #lista.
+            $('#lista').append("<li>Ultima</li>");
+            $('#lista').prepend("<li>Primero</li>");
+        // 7-Accede al contenido del elemento con id #descripcion y muestra el valor en consola.
+            $("#descripcion").keypress(function (e) {
+                console.log($(this).val());
+            });
+        // 8-Obtén todos los elementos con la clase .carta y cambia su color de borde a verde.
+            $(".clase").css("border", "3px solid green");
+        // 9-Elimina todos los elementos con la clase .eliminar.
+            $(".eliminar").remove();
+        // 10-Selecciona todos los <span> dentro de un <div> con id #contenedor y cambia su color de fondo a gris.
+            $("#contenedor span").css("background", "grey");
+
+        //TANDA 2 
+         // 11-Selecciona todos los elementos con la clase .foto y ocúltalos.
+         $('.foto').hide();
+        // 12-Añade un borde rojo a todos los elementos <h1> dentro de un <div>.
+            $('#rojos h3').css('border','2px solid red')
+        // 13-Accede a todos los elementos de tipo <input> y establece su valor como "Texto predeterminado".
+            $('input').val('Texto predeterminado')
+        // 14-Selecciona el segundo <div> en el documento y cámbiale el fondo a amarillo.
+            $('div:eq(1)').css("background","yellow");
+        // 15-Añade un class llamado activo a todos los <a> dentro de un <nav>.
+            $('nav a').addClass("activo")
+        // 16-Inserta un nuevo párrafo al principio del <body> con el texto "Bienvenido".
+            $("body").prepend("<p>Ejercicio 16</p>")
+        // 17-Cambiar el src de una imagen con id #imagen a una nueva URL.
+            $("#imagen").attr("src","../../10-boostrap/img/007.jpg")
+            $("#imagen").width("100")
+        // 18-Establece un atributo data-id en todos los elementos con la clase .producto.
+            for(let i=0; i < $(".producto").length; i++){
+                $(".producto:eq("+i+")").attr("data-id",i);
+            }    
+        // 19-Cambiar el valor de un <input> con id #nombre a "Juan Pérez".
+            $("#nombre").val("Juan Perez")
+        // 20-Añadir un título en el <head> que diga "Página Web Interactiva".
+            $('head').append("<title>Pagina Web Interactiva</title>")
+    </script>
+
+</body>
+</html>
