@@ -17,3 +17,17 @@ function comprobarfile() {
 
     output.appendChild(res);
 }
+/* 
+let fichero = document.getElementById("fichero");
+let boton = document.getElementById("enviar");
+
+boton.addEventListener("click",function(){
+let extensiones =["jpg","png"];
+let extension = fichero.value.split(".")[1];
+    if(!extensiones.includes(extension)){
+    alert("extension erronea");
+    }else{
+    boton.setAttribute("type","submit");
+    }
+})
+*/
