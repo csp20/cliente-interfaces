@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- validacion con html -->
+
+    <!-- validacion javascript
+     input de muchos tipos
+     select
+     file tam nom
+     - saber acceder al contenido  (tam, no vacio, cambio dom)
+     - comparar contenido 
+     inmediatos y boton 
+     -->
+     <form action="">
+        <label>elige un color</label><br>
+        <select name="select" id="select">
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="yellow">yellow</option>
+        </select>
+        <br><br>
+        <div style="height: 200px; width: 200px;" id="div"> colores</div>
+    </form>
+    
+    <script>
+        let divColor = document.getElementById("div");
+        let select = document.getElementById("select");
+        select.addEventListener("click", cambiocolor);
+    
+        function cambiocolor(){
+            let selectedColor = select.value;
+            divColor.style.backgroundColor = selectedColor;
+        }
+    </script>
+    
+</body>
+</html>
