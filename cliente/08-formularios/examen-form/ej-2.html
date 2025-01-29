@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- APARTADO A 
+    
+   
+   <form action="">
+        <input id="text1" name="text1">
+        <br>
+        <input id="text2" name="text2" readonly>
+        <br>
+        <button id="boton" name="boton">pulsa para Copiar</button>
+    </form>
+    <script>
+        let formu = document.forms[0];
+        let text1 = formu.elements[0];
+        let text2 = formu.text2;
+        let boton = formu.boton;
+
+        boton.onclick = function (event) {
+            event.preventDefault();
+            let text = text1.value;
+            text2.value = text;
+        }
+    </script>-->
+
+    
+    <!--APARTADO B-->
+
+    <form action="">
+        <input id="text1" name="text1">
+        <br>
+        <input id="text2" name="text2" readonly>
+    </form>
+    <script>
+        let formu = document.forms[0];
+        let text1 = formu.elements[0];
+        let text2 = formu.text2;
+
+
+        text1.onkeyup = function () {
+            text2.value = text1.value;
+        }
+    </script>
+
+</body>
+
+</html>

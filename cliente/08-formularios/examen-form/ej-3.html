@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="form">
+        <label for="">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+        <br>
+        <label for="">Apellido1:</label>
+        <input type="text" id="Apellido1" name="Apellido1" placeholder="Apellido1">
+        <br>
+        <label for="">Apellido2:</label>
+        <input type="text" id="Apellido2" name="Apellido2" placeholder="Apellido2">
+        <br>
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" placeholder="email" />
+        <br>
+        <label for="pasaporte">pasaporte:</label>
+        <input type="file" name="pasaporte" id="pasaporte" placeholder="pasaporte" />
+        <br>
+        <label for="">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña">
+        <br>
+        <label for="">Repite Contraseña:</label>
+        <input type="password" id="repitecontrasena" name="repitecontrasena" placeholder="repiteContraseña">
+        <br>
+        <button type="reset" id="reset">Reset</button>
+        <button type="submit" id="Enviar">Enviar</button>
+    </form>
+    <script>
+        document.getElementById("form").onchange = function (event) {
+
+            let nombre = document.getElementById("nombre").value;
+            let Apellido1 = document.getElementById("Apellido1").value;
+            let Apellido2 = document.getElementById("Apellido2").value;
+            let email = document.getElementById("email").value;
+            let pasaporte = document.getElementById("pasaporte").value;
+            let contrasena = document.getElementById("contrasena").value;
+            let repitecontrasena = document.getElementById("repitecontrasena").value;
+
+            if (!Apellido1 || !nombre || !Apellido2 || !email || !pasaporte || !contrasena || !repitecontrasena) {
+                alert("te faltan campos por rellenar");
+            }
+
+            if (!validarApellido1() || !validarNombre() || !validarApellido1() || !validaremail() || !validarpasaporte()|| !validarContrasena() || !validarrepitecontrasena()) {
+                return;
+            }
+
+            alert("Formulario enviado correctamente.");
+            document.getElementById('form').submit();
+        };
+
+        document.getElementById("nombre").onblur = validarNombre;
+        document.getElementById("apellido1").onblur = validarApellido1;
+        document.getElementById("apellido2").onblur = validarApellido1;
+        document.getElementById("email").onblur = validaremail;
+        document.getElementById("pasaporte").onblur = validarpasaporte;
+        document.getElementById("contrasena").onblur = validarContrasena;
+        document.getElementById("repitecontrasena").onblur = validarrepitecontrasena;
+
+
+        document.getElementById("form").onreset = function () {
+            window.location.reload();
+        };
+
+        function validarNombre() {
+            if (!nombre.length > 2 || nombre == "") {
+                alert("El campo nombre debe estar relleno.");
+                document.getElementById('nombre').focus();
+            }
+        }
+
+        function validarApellido1() {
+            if (!Apellido1.length > 2 || Apellido1 == "") {
+                alert("El campo nombre debe estar relleno.");
+                document.getElementById('Apellido1').focus();
+            }
+        }
+
+        function validarApellido2() {
+            if (!Apellido2.length > 2 || Apellido2 == "") {
+                alert("El campo nombre debe estar relleno.");
+                document.getElementById('Apellido2').focus();
+            }
+        }
+        function validaremail() {
+            let patronEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === "") {
+                res = "error, el campo de e-mail está vacío";
+                document.getElementById("emailError").style.display = "inline";
+            } else if (!patronEmail.test(email)) {
+                res = "error, el e-mail no es válido";
+                document.getElementById("emailError").style.display = "inline";
+            } else {
+                document.getElementById("emailError").style.display = "none";
+            }
+        }
+        function validarpasaporte() {
+            let cacho = file.value.split(".");
+            let output = document.getElementById("output");
+            output.innerHTML = ""; // Limpiar mensajes anteriores
+
+            let res = document.createElement("div");
+            if (cacho[cacho.length - 1] === "pdf") {
+                res.textContent = "Muy bien";
+                boton.setAttribute("type", "submit");
+            } else {
+                res.textContent = "Muy mal";
+            }
+
+            output.appendChild(res);
+        }
+
+        function validarContrasena() {
+            if (contrasena.length < 8 || contrasena.length > 10) {
+                alert("La contraseña debe tener entre 8 y 10 caracteres.");
+                document.getElementById('contrasena').focus();
+                return;
+            }
+        }
+        function validarrepitecontrasena() {
+
+            let contrasenia = document.getElementById("contrasena").value;
+            let repitecontrasenia = document.getElementById("repitecontrasena").value;
+            
+            if (contrasenia == repitecontrasenia) {
+                alert("todo correcto");
+            } else {
+                alert(" la contrasenia no es la misma");
+            }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="nombre">Nombre*</label>
+        <input type="text" name="nombre" id="nombre" />
+
+        <br><br>
+        <label for="email">email*</label>
+        <input type="text" name="email" id="email" />
+
+        <br><br>
+        <select name="select" id="select">
+            <option id="info" value="info">pedir informacion</option>
+            <option id="apuntarse" value="apuntarse">apuntarse a un curso</option>
+            <option id="otros" value="otros">otros</option>
+        </select>
+        <br><br>
+        <div id="div" hidden>
+            <label>curso</label>
+            <select name="select2" id="select2">
+                <option id="DAM" value="DAM">DAM </option>
+                <option id="DAW" value="DAW">DAW </option>
+                <option id="ASIR" value="ASIR">ASIR</option>
+            </select>
+        </div>
+        <div id="div2" hidden>
+            <label>otra opciob</label>
+            <input type="text">
+        </div>
+
+    </form>
+    <script>
+        let opcion1 = document.getElementById("info");
+        let opcion2 = document.getElementById("apuntarse");
+        let opcion3 = document.getElementById("otros");
+        let div = document.getElementById("div");
+
+        opcion2.addEventListener("click", comprobar);
+        opcion3.addEventListener("click", comprobar2);
+
+        function comprobar() {
+            div.hidden = false;
+
+        }
+        function comprobar2() {
+            div2.hidden = false;
+
+        }
+    </script>
+</body>
+
+</html>
