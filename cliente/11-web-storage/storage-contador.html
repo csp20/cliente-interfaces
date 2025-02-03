@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="incrementar">incrementar</button>
+    <button id="reducir">reducir</button>
+    <button id="consultar">consultar</button>
+
+    <p id="resultado"></p>
+    <script>
+        document.getElementById("incrementar").addEventListener("click", incrementar);
+        document.getElementById("reducir").addEventListener("click",reducir);
+        document.getElementById("consultar").addEventListener("click",consultar);
+        let contador = 0;
+        function incrementar() {
+            sessionStorage.setItem("usuario", contador);
+           contador++;
+        }
+        function consultar() {
+            let valor = sessionStorage.getItem(contador);
+
+            document.getElementById("resultado").innerHTML = `la 
+            variable usuario tiene almacenado ${contador}`
+        }
+        function reducir() {
+            sessionStorage.setItem("usuario", contador);
+        }
+    </script>
+</body>
+</html>
