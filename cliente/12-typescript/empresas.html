@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Empresas</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #0073e6;
+            color: white;
+        }
+        .highlight {
+            background-color: red !important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <table id="empresasTable">
+        <tr>
+            <th>EMPRESAS</th>
+            <th>PLAZAS</th>
+            <th>OBSERVACIONES</th>
+        </tr>
+        <tr><td onclick="highlightRow(this)">Claroflex</td><td>1</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">Fans Marketing</td><td>1</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">Puraenvidia films S.L.</td><td>1</td><td>CV</td></tr>
+        <tr><td onclick="highlightRow(this)">Verisk</td><td>2</td><td>CV + Inglés</td></tr>
+        <tr><td onclick="highlightRow(this)">Arelance</td><td>1</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">Medac</td><td>2</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">JapiEstudio</td><td>10</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">Besoccer</td><td>1</td><td>CV</td></tr>
+        <tr><td onclick="highlightRow(this)">Inone</td><td>1</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">All Repair</td><td>2</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">Dekra</td><td>1</td><td>CV</td></tr>
+        <tr><td onclick="highlightRow(this)">8pecados</td><td>1</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">NTT DATA</td><td>1</td><td>CV</td></tr>
+        <tr><td onclick="highlightRow(this)">Unknown Gravity</td><td>1</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">Tour10 Travel SL</td><td>2</td><td>CV</td></tr>
+        <tr><td onclick="highlightRow(this)">CPU Global Services</td><td>1</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">Enreach</td><td>1</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">Antonio Villena Permisos de Residencia</td><td>1</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">Diego Cuevas</td><td>3</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">Bimfloat</td><td>1</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">Cinpy</td><td>1</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">Altaid formación</td><td>10</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">Tienda CPU</td><td>2</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">Colegio Maravillas</td><td>1</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">BIBO Dani García</td><td>1</td><td>Marbella</td></tr>
+        <tr><td onclick="highlightRow(this)">Hubiqus</td><td>1</td><td></td></tr>
+        <tr><td onclick="highlightRow(this)">UTAMED</td><td>3</td><td>CV</td></tr>
+    </table>
+
+    <script>
+        function highlightRow(cell) {
+            let row = cell.parentNode; // Obtener la fila de la celda seleccionada
+            row.classList.toggle("highlight"); // Alternar la clase para cambiar color
+        }
+    </script>
+
+</body>
+</html>
+
