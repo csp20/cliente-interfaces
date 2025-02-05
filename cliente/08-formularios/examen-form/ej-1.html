@@ -57,4 +57,63 @@
     </script>
 </body>
 
+
+
+
+
+
+<!-- 
 </html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="nombre">Nombre*</label>
+        <input type="text" name="nombre" id="nombre" required />
+
+        <br><br>
+        <label for="email">Email*</label>
+        <input type="email" name="email" id="email" required />
+
+        <br><br>
+        <label for="select">Seleccione una opción:</label>
+        <select name="select" id="select" onchange="comprobar()">
+            <option value="info">Pedir información</option>
+            <option value="apuntarse">Apuntarse a un curso</option>
+            <option value="otros">Otros</option>
+        </select>
+        <br><br>
+        <div id="cursoDiv" hidden>
+            <label for="select2">Curso:</label>
+            <select name="select2" id="select2">
+                <option value="DAM">DAM</option>
+                <option value="DAW">DAW</option>
+                <option value="ASIR">ASIR</option>
+            </select>
+        </div>
+        <div id="otrosDiv" hidden>
+            <label for="otrosInput">Otra opción:</label>
+            <input type="text" id="otrosInput" name="otrosInput">
+        </div>
+
+    </form>
+    <script>
+        function comprobar() {
+            let select = document.getElementById("select").value;
+            let cursoDiv = document.getElementById("cursoDiv");
+            let otrosDiv = document.getElementById("otrosDiv");
+
+            cursoDiv.hidden = select !== "apuntarse";
+            otrosDiv.hidden = select !== "otros";
+        }
+    </script>
+</body>
+
+</html> -->
