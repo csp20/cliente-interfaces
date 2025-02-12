@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+    APP.js
+import { useState } from 'react';
+import Formulario from './Componentes/Formulario';
+import NumeroSecreto from './Componentes/NumeroSecreto';
+import Puntuacion from './Componentes/Puntuacion';
+import Reiniciar from './Componentes/Reiniciar';
+
+import './App.css';
+
+function App() {
+  const generarNumSecreto=()=>{
+    return  Math.trunc(Math.random()*20+1);
+  }
+
+  const reiniciar =()=>{
+    setNumeroSecreto(generarNumSecreto)
+    setMensaje("Empiece a adivinar")
+    setPuntuacion(20)
+  }
+  const comparar = (numero)=>{
+    if(!numero){
+      setMensaje("Porfavor pon un numero")
+    } else if (Number(numero) == numSecreto){
+      setMensaje("Ganaste!");
+      document.body.style.backgroundColor="green";
+      if(score > puntuacion){
+        setScore(puntuacion);
+      }
+    } else{
+      if (Number(numero) < numSecreto) {
+        setMensaje("El numero es menor que el numero secreto");
+      } else{
+        setMensaje("El numero es mas grande que el numero secreto")
+      }
+      setPuntuacion(puntuacion - 1);
+    }
+  }
+
+   const [numSecreto,setNumeroSecreto] = useState(generarNumSecreto);
+   const [mensaje,setMensaje]=useState("Empiece adivinar...")
+   const [puntuacion,setPuntuacion]=useState(20)
+   const [score,setScore]=useState(0)
+   return (
+    <div className="container">
+    <Reiniciar reiniciar={reiniciar}/>
+    <h1>¡Adivina mi número!{numSecreto}</h1>
+    <NumeroSecreto/>
+   <br/>
+    
+    <Formulario comparar={comparar}/>
+    
+    <Puntuacion/>
+  </div>
+   
+
+  );-->
+
+
+  <!-- 
+  FORMULARIO 
+
+  import React, { useState } from 'react'
+
+export default function Formulario({comparar}) {
+  
+  const comprobar = () => {
+      comparar(num);
+  }
+  
+  const [num, setNum] = useState();
+
+  const modificar = (e) => {
+    // console.log(e);
+    setNum(e.target.value);
+  }
+
+  return (
+    <div className="guess-section">
+        <input onChange={modificar} value={num} type="number" id="guess" placeholder="Número" min="1" max="20"/>
+        <button onClick={comprobar}>Check!</button>
+    </div>
+  )
+}-->
+
+
+<!-- 
+REINICIAR
+
+import React from 'react'
+
+export default function Reiniciar({reiniciar}) {
+  return (
+    <div>
+        <button onClick={reiniciar}>Reiniciar </button>
+    </div>
+  )
+}
+-->
+
+<!-- 
+LINEAPUNTUACION.JS
+
+import React from 'react'
+
+export default function LineaPuntuacion({etiqueta, id, numero}) {
+  return (
+    <p>{etiqueta} <span id={id}>{numero}</span></p>
+  )
+}-->
+  <!-- 
+MENSAJE
+
+  import React from 'react'
+
+export default function Mensaje() {
+  return (
+    <p>Empiece a adivinar...</p>  
+  )
+}
+-->
+
+<!-- 
+NUMEROSECRETO,JS
+
+import React from 'react'
+
+export default function NumeroSecreto() {
+  return (
+    <>
+       <div className="number-display">?</div>
+    </>
+  )
+}-->
+
+<!--
+
+PUNTUACION
+
+import React from 'react'
+import Mensaje from './Mensaje'
+import LineaPuntuacion from './LineaPuntuacion'
+
+export default function Puntuacion() {
+  return (
+    <div className="score-section">
+        <br/>
+        <Mensaje/>
+        <LineaPuntuacion etiqueta="Puntuacion:" id="score" numero="20"/>
+        <LineaPuntuacion etiqueta="Puntuje alto" id="highscore" numero="0"/>
+        <p>Puntaje Alto: <span id="highscore">0</span></p>
+    </div>
+  )
+}
+-->
+
+</body>
+</html>
