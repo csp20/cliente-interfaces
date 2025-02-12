@@ -1,0 +1,113 @@
+<!-- 
+ 
+NombreEdadaludo
+
+import React, { useState } from 'react';
+
+function NombreEdadSaludo() {
+  const [nombre, setNombre] = useState('');
+  const [edad, setEdad] = useState('');
+  const [mensaje, setMensaje] = useState('');
+
+  const manejarCambioNombre = (e) => {
+    setNombre(e.target.value);
+  };
+
+  const manejarCambioEdad = (e) => {
+    setEdad(e.target.value);
+  };
+
+  const manejarSaludo = () => {
+    let categoria;
+
+    if (edad < 12) {
+      categoria = 'niño';
+    } else if (edad < 20) {
+      categoria = 'joven';
+    } else if (edad < 40) {
+      categoria = 'mayor';
+    } else {
+      categoria = 'viejo';
+    }
+
+    setMensaje(`Hola ${nombre}, eres ${categoria}.`);
+  };
+
+  return (
+    <div>
+      <div>
+        <label>Nombre: </label>
+        <input type="text" value={nombre} onChange={manejarCambioNombre} />
+      </div>
+      <div>
+        <label>Edad: </label>
+        <input type="number" value={edad} onChange={manejarCambioEdad} />
+      </div>
+      <button onClick={manejarSaludo}>Saludar</button>
+      <div>
+        <p>{mensaje}</p>
+      </div>
+    </div>
+  );
+}
+
+export default NombreEdadSaludo;
+-->
+
+
+
+<!-- 
+app
+
+
+import React from 'react';
+import NombreEdadSaludo from './NombreEdadSaludo';
+
+function App() {
+  return (
+    <div>
+      <h1>Aplicación de Saludo</h1>
+      <NombreEdadSaludo />
+    </div>
+  );
+}
+
+export default App;
+-->
+
+<!-- 
+
+index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+-->
+
+<!-- 
+otro ejemplo
+
+// App.js
+import React, { useState } from 'react';
+
+function App() {
+  const [mensaje, setMensaje] = useState('Hola, mundo');
+
+  const manejarClick = () => {
+    setMensaje('¡Has hecho clic en el botón!');
+  };
+
+  return (
+    <div>
+      <h1>{mensaje}</h1>
+      <button onClick={manejarClick}>Haz clic aquí</button>
+    </div>
+  );
+}
+
+export default App;
+
+
+-->
