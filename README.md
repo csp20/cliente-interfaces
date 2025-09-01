@@ -1,4 +1,4 @@
-# 🧾 Ejercicios de Servidor – Curso 2025
+# 🧾 Ejercicios de Front-end – Curso 2025
 
 Este repositorio contiene los ejercicios realizados en la asignatura de **Desarrollo web Cliente** y la asignatura de **Desarrollo de interfaces web**. Cada carpeta corresponde a una  unidad temática, con ejemplos y jercicios funcionales, código comentado y documentación complementaria.
 
